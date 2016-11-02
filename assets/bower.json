@@ -1,0 +1,30 @@
+{
+  "name": "filter-log",
+  "version": "1.0.0",
+  "authors": [
+    "João Paulo <jpaulo.bcc@gmail.com>"
+  ],
+  "description": "assets sistema FILTER-LOG",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "src"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "jquery": "1.12.4",
+    "jquery.maskMoney": "^3.0.2",
+    "datetimepicker": "^2.5.4",
+    "font-awesome": "fontawesome#^4.6.3",
+    "jquery-mask-plugin": "jQuery-Mask-Plugin#^1.14.0",
+    "sweetalert2": "^4.0.10",
+    "jquery-ui": "~1.11.4"
+  }
+}

@@ -1,0 +1,10 @@
+.idea
+application/cache/*
+application/logs/*
+config.php
+
+assets/node_modules/*
+assets/components/*
+assets/.sass-cache/*
+assets/checkstyle.xml
+assets/report.xml

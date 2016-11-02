@@ -1,0 +1,1 @@
+<h1 class="ls-title-intro <?php echo $argTitulo['classe']; ?>"><?php echo $argTitulo['titulo'];?></h1>

@@ -1,0 +1,81 @@
+/**
+ * Folha de Estilos
+ */
+body {
+  padding-top: 70px; }
+
+.title-custom-button {
+  padding-top: 0.5em; }
+
+.margin-bottom-1 {
+  margin-bottom: 1em; }
+
+.margin-top-1 {
+  margin-top: 1em; }
+
+.logo-menu {
+  position: relative;
+  top: -0.6em; }
+
+.button-form-horizontal {
+  margin-top: 1.714em; }
+
+.bg-none {
+  background-color: transparent; }
+
+.container-login {
+  width: 100%;
+  height: 100%;
+  text-align: center; }
+
+.container-login:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em; }
+
+.login-content {
+  display: inline-block;
+  vertical-align: middle;
+  background: #fff;
+  padding: 1em;
+  width: 24em;
+  text-align: left;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px; }
+
+.login-content .actions {
+  margin-top: 10px; }
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%; }
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px; }
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5; }
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+.container {
+  width: auto;
+  max-width: 680px;
+  padding: 0 15px; }
+
+.container .text-muted {
+  margin: 20px 0; }
+
+/*# sourceMappingURL=main.css.map */

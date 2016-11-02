@@ -1,0 +1,96 @@
+<?php
+$lang['cadastro'] = 'Cadastro';
+$lang['cadastro_perfil'] = 'Cadastro de perfil';
+$lang['nome'] = 'Nome';
+$lang['nome_completo'] = 'Nome completo';
+$lang['status'] = 'Status';
+$lang['salvar'] = 'Salvar';
+$lang['voltar'] = 'Voltar';
+$lang['inativo'] = 'Inativo';
+$lang['ativo'] = 'Ativo';
+$lang['sucesso_cadastro'] = 'Cadastro efetuado com sucesso.';
+$lang['sucesso_alteracao'] = 'Alteração efetuada com sucesso.';
+$lang['cadastrar'] = 'Cadastrar';
+$lang['buscar'] = 'Buscar';
+$lang['nenhum_registo_encontrado'] = 'Nenhum registro encontrado';
+$lang['editar'] = 'Editar';
+$lang['usuarios'] = 'Usuários';
+$lang['cadastro_usuario'] = 'Cadastro de usuário';
+$lang['usuario'] = 'Usuário';
+$lang['perfil'] = 'Perfil';
+$lang['perfis'] = 'Perfis';
+$lang['selecione'] = 'Selecione';
+$lang['selecione_estado'] = 'Selecione o estado';
+$lang['unidade'] = 'Unidade';
+$lang['cpf'] = 'CPF';
+$lang['data_nascimento'] = 'Data de nascimento';
+$lang['email'] = 'E-mail';
+$lang['telefone'] = 'Telefone';
+$lang['celular'] = 'Celular';
+$lang['endereco'] = 'Endereço';
+$lang['numero'] = 'Número';
+$lang['complemento'] = 'Complemento';
+$lang['bairro'] = 'Bairro';
+$lang['estado'] = 'Estado';
+$lang['cidade'] = 'Cidade';
+$lang['cep'] = 'CEP';
+$lang['email_cadastro_assunto'] = 'Bem-vindo(a) ao ' . NOME_SISTEMA;
+$lang['email_cadastro_mensagem'] = 'Olá %s, bem-vindo(a) ao ' . NOME_SISTEMA . '!<br />
+									Para utilizar o sistema acesse: <a href="'.base_url().'Admin/Login">'.base_url().'Admin/Login</a><br /><br />
+									Dados para acesso:<br/><br />
+									E-mail: %s<br/>
+									Senha: %s<br/><br/>
+									Após acessar o sistema você poderá alterar sua senha acessando o menu "Configurações"';
+$lang['usuario_email_duplicado'] = 'Já existe um usuário cadastrado com este e-mail';
+$lang['acoes'] = 'Ações';
+$lang['dados_invalidos'] = 'Dados inválidos';
+$lang['administracao_sistema'] = 'Administração do Sistema';
+$lang['esqueci_minha_senha'] = 'Esqueci minha senha';
+$lang['entrar'] = 'Entrar';
+$lang['senha'] = 'Senha';
+$lang['conta_inativa'] = 'Conta invativa';
+$lang['informe_email'] = 'Informe o e-mail';
+$lang['usuario_nao_encontrado'] = 'Usuário não encontrado';
+$lang['error_mensagem_email'] = 'Não foi possível enviar o e-mail de recuperação, tente novamente mais tarde.';
+$lang['success_mensagem_email'] = 'Um link para recuperação da senha foi enviado para o e-mail %s.';
+$lang['chave_recuperacao'] = 'Chave de recuperação.';
+$lang['chave_recuperacao_invalida'] = 'Chave de recuperação inválida';
+$lang['recuperacao_chave'] = "A sua chave de recuperação não é mais válida, solicite uma nova chave clicando %s.";
+$lang['hash_nao_informado'] = "Chave de recuperação de senha não informada";
+$lang['confirmacao_senha'] = "Confirmação de senha";
+$lang['efetuar_login'] = "Efetuar login";
+$lang['senha_alterada'] = "Senha alterada com sucesso!<br/> %s";
+$lang['email_recuperacao'] = "Você está recebendo esta mensagem pois foi solicitada a recuperação da senha no
+						  <a href='".base_url()."' target='_blank'>" . NOME_SISTEMA . "</a>.<br/><br/>
+						  Para recuperar sua senha acesse o link <a href='%s' targe ='_blank'>%s</a>.</br>
+					      Caso você não tenha solicitado a recuperação da senha ignore esta mensagem.<br/>";
+$lang['recuperacao_senha'] = "Recuperação de senha";
+$lang['cadastre_senha_nova'] = "Cadastre uma nova senha";
+$lang['nova_senha'] = "Nova senha";
+$lang['repetir_senha'] = "Repetir senha";
+$lang['campos_obrigatorios'] = "Campos obrigatórios";
+$lang['sair'] = "sair";
+$lang['configuracoes'] = "Configurações";
+$lang['senha_atual'] = "Senha atual";
+$lang['senha_atual_nao_confere'] = "Senha atual não confere";
+$lang['alterar_senha'] = "Alterar senha";
+$lang['dashboard'] = "Dashboard";
+$lang['help_senha'] = "A senha deve conter no mínimo 6 e no máximo 20 caracteres";
+$lang['pesquisa'] = "Pesquisa";
+$lang['pesquisas'] = "Pesquisas";
+$lang['aplicar_nova_pesquisa'] = "Aplicar nova pesquisa";
+$lang['medico'] = "Médico";
+$lang['paciente'] = "Paciente";
+$lang['data_inicio'] = "Data de";
+$lang['data_fim'] = "Data até";
+$lang['prontuario'] = "Prontuário";
+$lang['n'] = "nº";
+$lang['aplicado_por'] = "Aplicado por";
+$lang['data'] = "Data";
+$lang['detalhes'] = "Detalhes";
+$lang['configuracao_permissoes_acesso'] = "Configuração de permissão de acesso";
+$lang['permissoes_acesso'] = "Permissões de acesso";
+$lang['regra_invalida'] = "Regra(s) com valor(es) inválido(s)";
+$lang['perfil_admin_configuracoes_acesso'] = "O perfil Administrador não possui configurações de permissão de acesso.";
+$lang['selecionar_todos'] = "Selecionar todos";
+$lang['permissoes_do_perfil'] = "Permissões do perfil";

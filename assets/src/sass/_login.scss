@@ -1,0 +1,29 @@
+.container-login {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.container-login:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em;
+}
+
+.login-content {
+  display: inline-block;
+  vertical-align: middle;
+  background: #fff;
+  padding: 1em;
+  width: 24em;
+  text-align: left;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.login-content .actions {
+  margin-top: 10px;
+}
