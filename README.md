@@ -37,9 +37,9 @@ Instalação do Gulp-cli (alguns sistemas precisam do 'sudo'):
 ```
 sudo npm install -g gulp-cli
 ```
-A configuração do Gulp é feita no arquivo *gulpfile.js* localizado em 'appbase/assets'. Neste diretório encontramos também o arquivo *package.json* que ó o arquivo onde se encontram as dependências dos plugins que serão instalados para a utilização do Gulp.
+A configuração do Gulp é feita no arquivo *gulpfile.js* localizado em 'filter-log/assets'. Neste diretório encontramos também o arquivo *package.json* que ó o arquivo onde se encontram as dependências dos plugins que serão instalados para a utilização do Gulp.
 
-Para a instalação das dependências, deve ser executado em 'appbase/assets/' o seguinte comando:
+Para a instalação das dependências, deve ser executado em 'filter-log/assets/' o seguinte comando:
 ```
 sudo npm install
 ```  
@@ -57,7 +57,7 @@ Para instalar o Bower:
 ```
 sudo npm install -g bower
 ```
-As dependências de front-end do modelo base estão listadas no arquivo *bower.json*. Para a instalação das dependências acesse o diretório 'appbase/assets' e execute:
+As dependências de front-end do modelo base estão listadas no arquivo *bower.json*. Para a instalação das dependências acesse o diretório 'filter-log/assets' e execute:
 ```
 bower install
 ```
@@ -94,7 +94,7 @@ Depois, acesse o diretório de configuração do servidor Apache e crie o arquiv
 
 ```
 $ cd /etc/etc/apache2/sites-available
-$ sudo nano appbase.conf
+$ sudo nano filter-log.conf
 ```
 Segue o exemplo de configuração para o CodeIgniter
 
@@ -111,7 +111,7 @@ Segue o exemplo de configuração para o CodeIgniter
 
 Após a criação do arquivo de configuração, habilitar o novo arquivo e reiniciar o servidor Apache com os seguintes comandos:
 ```
-sudo a2ensite appbase.conf
+sudo a2ensite filter-log.conf
 sudo service apache2 restart
 ```
 
