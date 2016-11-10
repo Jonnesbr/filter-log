@@ -35,7 +35,7 @@ abstract class InterfaceController extends CI_Controller{
     public function __construct()
     {
         parent::__construct();
-        $this->output->enable_profiler(!true);
+        $this->output->enable_profiler(ENABLE_PROFILER);
     }
 
     protected function WriteTemplates($argPrincipal) {

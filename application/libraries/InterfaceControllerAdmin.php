@@ -69,6 +69,10 @@ abstract class InterfaceControllerAdmin extends InterfaceController {
                 'Cadastro' => 'Usuario/cadastro',
                 'Lista'    => 'Usuario/index'
             ),
+//            'Clientes' => array(
+//                'Cadastro' => 'Cliente/cadastro',
+//                'Lista'    => 'Cliente/index'
+//            ),
             'Configurações' => 'Configuracoes/index'
         );
     }
