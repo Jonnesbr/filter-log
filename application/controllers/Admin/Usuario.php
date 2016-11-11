@@ -121,24 +121,24 @@ class Usuario extends InterfaceControllerAdmin
 
     public function validarFormCadastro()
     {
-        $this->load->library('form_validation');
-        $this->form_validation->set_rules('perfil', $this->lang->line('perfil'), "required|is_natural_no_zero");
-        $this->form_validation->set_rules('nome', $this->lang->line('nome_completo'), "trim|required|max_lengh[50]|is_full_name");
-        $this->form_validation->set_rules('cpf', $this->lang->line('cpf'), "trim|valid_cpf");
-        $this->form_validation->set_rules('data_nascimento', $this->lang->line('data_nascimento'), "trim|valid_data[/]");
-        $this->form_validation->set_rules('email', $this->lang->line('email'), "trim|required|max_lengh[50]|valid_email|is_unique[usuario.email.id.$this->id]");
-        $this->form_validation->set_rules('telefone', $this->lang->line('telefone'), "trim|valid_telefone");
-        $this->form_validation->set_rules('celular', $this->lang->line('celular'), "trim|valid_telefone");
-        $this->form_validation->set_rules('endereco', $this->lang->line('endereco'), "trim|valid_text|max_lengh[300]");
-        $this->form_validation->set_rules('numero', $this->lang->line('numero'), "trim|valid_text|max_lengh[5]");
-        $this->form_validation->set_rules('complemento', $this->lang->line('complemento'), "trim|valid_text|max_lengh[30]");
-        $this->form_validation->set_rules('bairro', $this->lang->line('bairro'), "trim|valid_text|max_lengh[50]");
-        $this->form_validation->set_rules('cidade', $this->lang->line('cidade'), "trim|is_natural_no_zero");
-        $this->form_validation->set_rules('cep', $this->lang->line('cep'), "trim|valid_cep");
-        $this->form_validation->set_rules('status', $this->lang->line('status'), "trim|required|is_natural");
-        $this->form_validation->set_message('is_unique', $this->lang->line('usuario_email_duplicado'));
+//        $this->load->library('form_validation');
+//        $this->form_validation->set_rules('perfil', $this->lang->line('perfil'), "required|is_natural_no_zero");
+//        $this->form_validation->set_rules('nome', $this->lang->line('nome_completo'), "trim|required|max_lengh[50]|is_full_name");
+//        $this->form_validation->set_rules('cpf', $this->lang->line('cpf'), "trim|valid_cpf");
+//        $this->form_validation->set_rules('data_nascimento', $this->lang->line('data_nascimento'), "trim|valid_data[/]");
+//        $this->form_validation->set_rules('email', $this->lang->line('email'), "trim|required|max_lengh[50]|valid_email|is_unique[usuario.email.id.$this->id]");
+//        $this->form_validation->set_rules('telefone', $this->lang->line('telefone'), "trim|valid_telefone");
+//        $this->form_validation->set_rules('celular', $this->lang->line('celular'), "trim|valid_telefone");
+//        $this->form_validation->set_rules('endereco', $this->lang->line('endereco'), "trim|valid_text|max_lengh[300]");
+//        $this->form_validation->set_rules('numero', $this->lang->line('numero'), "trim|valid_text|max_lengh[5]");
+//        $this->form_validation->set_rules('complemento', $this->lang->line('complemento'), "trim|valid_text|max_lengh[30]");
+//        $this->form_validation->set_rules('bairro', $this->lang->line('bairro'), "trim|valid_text|max_lengh[50]");
+//        $this->form_validation->set_rules('cidade', $this->lang->line('cidade'), "trim|is_natural_no_zero");
+//        $this->form_validation->set_rules('cep', $this->lang->line('cep'), "trim|valid_cep");
+//        $this->form_validation->set_rules('status', $this->lang->line('status'), "trim|required|is_natural");
+//        $this->form_validation->set_message('is_unique', $this->lang->line('usuario_email_duplicado'));
 
-        return $this->form_validation->run();
+//        return $this->form_validation->run();
     }
 
     private function cadastrar()
