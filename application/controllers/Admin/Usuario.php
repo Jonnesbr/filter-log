@@ -128,13 +128,6 @@ class Usuario extends InterfaceControllerAdmin
         $this->form_validation->set_rules('data_nascimento', $this->lang->line('data_nascimento'), "trim|valid_data[/]");
         $this->form_validation->set_rules('email', $this->lang->line('email'), "trim|required|max_lengh[50]|valid_email|is_unique[usuario.email.id.$this->id]");
         $this->form_validation->set_rules('telefone', $this->lang->line('telefone'), "trim|valid_telefone");
-        $this->form_validation->set_rules('celular', $this->lang->line('celular'), "trim|valid_telefone");
-        $this->form_validation->set_rules('endereco', $this->lang->line('endereco'), "trim|valid_text|max_lengh[300]");
-        $this->form_validation->set_rules('numero', $this->lang->line('numero'), "trim|valid_text|max_lengh[5]");
-        $this->form_validation->set_rules('complemento', $this->lang->line('complemento'), "trim|valid_text|max_lengh[30]");
-        $this->form_validation->set_rules('bairro', $this->lang->line('bairro'), "trim|valid_text|max_lengh[50]");
-        $this->form_validation->set_rules('cidade', $this->lang->line('cidade'), "trim|is_natural_no_zero");
-        $this->form_validation->set_rules('cep', $this->lang->line('cep'), "trim|valid_cep");
         $this->form_validation->set_rules('status', $this->lang->line('status'), "trim|required|is_natural");
         $this->form_validation->set_message('is_unique', $this->lang->line('usuario_email_duplicado'));
 
@@ -165,17 +158,11 @@ class Usuario extends InterfaceControllerAdmin
         $dadosPost = array();
         $dadosPost['id_perfil']       = $this->input->post('perfil');
         $dadosPost['nome']            = $this->input->post('nome');
-        $dadosPost['cpf']             = $this->libinfraformatador->retiraCaracteresEspeciais($this->input->post('cpf'));
-        $dadosPost['data_nascimento'] = $this->libinfraformatador->formatarPadraoBanco($this->input->post('data_nascimento'));
+        $dadosPost['cpf']             = ($this->input->post('cpf')) ? $this->libinfraformatador->retiraCaracteresEspeciais($this->input->post('cpf')) : null;
+        $dadosPost['data_nascimento'] = ($this->input->post('data_nascimento')) ? $this->libinfraformatador->formatarPadraoBanco($this->input->post('data_nascimento')) : null;
         $dadosPost['email']           = $this->input->post('email');
-        $dadosPost['telefone']        = $this->libinfraformatador->retiraCaracteresEspeciais($this->input->post('telefone'));
-        $dadosPost['celular']         = $this->libinfraformatador->retiraCaracteresEspeciais($this->input->post('celular'));
-        $dadosPost['endereco']        = $this->input->post('endereco');
-        $dadosPost['numero']          = $this->input->post('numero');
-        $dadosPost['complemento']     = $this->input->post('complemento');
-        $dadosPost['bairro']          = $this->input->post('bairro');
-        $dadosPost['id_cidade']       = $this->input->post('cidade');
-        $dadosPost['cep']             = $this->libinfraformatador->retiraCaracteresEspeciais($this->input->post('cep'));
+        $dadosPost['telefone']        = ($this->input->post('telefone')) ? $this->libinfraformatador->retiraCaracteresEspeciais($this->input->post('telefone')) : null;
+        $dadosPost['id_cidade']       = '9348';
         $dadosPost['status']          = $this->input->post('status');
         return $dadosPost;
     }
@@ -213,7 +200,6 @@ class Usuario extends InterfaceControllerAdmin
         $this->libinfraformatador->campos_data     = array('data_nascimento');
         $this->libinfraformatador->campos_cpfcnpj  = array('cpf');
         $this->libinfraformatador->campos_telefone = array('telefone', 'celular');
-        $this->libinfraformatador->campos_cep      = array('cep');
         $this->libinfraformatador->formatarDados($argDados);
         $argDados = $argDados[0];
     }
