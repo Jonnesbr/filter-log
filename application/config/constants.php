@@ -36,14 +36,14 @@ define('FOPEN_READ_WRITE_CREATE',				'a+b');
 define('FOPEN_WRITE_CREATE_STRICT',				'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
-define('NOME_SISTEMA', 'AppBase');
+define('NOME_SISTEMA', 'Filter-Log');
 define('DATA_VAZIA', '0000-00-00');
 define('STATUS_INATIVO', 0);
 define('STATUS_ATIVO', 1);
-define('EMAIL_CADASTRO', 'cadastro@AppBase.br');
-define('EMAIL_CADASTRO_NOME', 'AppBase - CADASTRO');
-define('EMAIL_RECUPERACAO', 'cadastro@AppBase.br');
-define('EMAIL_RECUPERACAO_NOME', 'AppBase - RECUPERAÇÃO');
+define('EMAIL_CADASTRO', 'jpaulo.bcc@gmail.com');
+define('EMAIL_CADASTRO_NOME', 'FilterLog - CADASTRO');
+define('EMAIL_RECUPERACAO', 'jpaulo.bcc@gmail.com');
+define('EMAIL_RECUPERACAO_NOME', 'FilterLog - RECUPERAÇÃO');
 define('PERFIL_ADMINISTRADOR', '1');
 
 //Extensões de arquivos permitidos para upload

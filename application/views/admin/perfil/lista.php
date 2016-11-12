@@ -10,7 +10,7 @@
     <?php foreach ($result as $row) :?>
         <tr>
             <td><?php echo $row['nome']?></td>
-           <td>
+            <td class="pull-right">
                 <div class="btn-group">
                     <a class="btn btn-primary" href="#"><i class="fa fa-bars fa-fw"></i> <?php echo $this->lang->line('acoes');?></a>
                     <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">

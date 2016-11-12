@@ -27,3 +27,4 @@ $lang['valid_telefone'] = "%s inválido.";
 $lang['valid_cep'] = "%s inválido.";
 $lang['is_full_name'] = "Informe o nome completo.";
 $lang['valid_senha'] = "%s inválida. A senha deve conter no mínimo 6 caracteres e no máximo 20.";
+$lang['valid_ip'] = "O %s informado não é válido.";
