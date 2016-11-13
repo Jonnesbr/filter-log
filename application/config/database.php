@@ -65,5 +65,22 @@ $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
 
 
+$db['syslog']['hostname'] = DB_SYSLOG_HOSTNAME;
+$db['syslog']['username'] = DB_SYSLOG_USERNAME;
+$db['syslog']['password'] = DB_SYSLOG_PASSWORD;
+$db['syslog']['database'] = DB_SYSLOG_DATABASE;
+$db['syslog']['dbdriver'] = 'postgre';
+$db['syslog']['dbprefix'] = '';
+$db['syslog']['pconnect'] = TRUE;
+$db['syslog']['db_debug'] = TRUE;
+$db['syslog']['cache_on'] = FALSE;
+$db['syslog']['cachedir'] = '';
+$db['syslog']['char_set'] = 'utf8';
+$db['syslog']['dbcollat'] = 'utf8_general_ci';
+$db['syslog']['swap_pre'] = '';
+$db['syslog']['autoinit'] = TRUE;
+$db['syslog']['stricton'] = FALSE;
+
+
 /* End of file database.php */
 /* Location: ./application/config/database.php */
