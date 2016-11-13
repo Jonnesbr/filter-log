@@ -106,7 +106,6 @@ APP.Widgets = (function($){
         //$(".input_decimal1").maskMoney({allowZero:true, allowNegative:false, defaultZero:false, thousands:'', decimal:'.', precision:1});
         $('.mask-hora').mask("99:99");
         $('.mask-date').mask("99/99/9999");
-        $('.ip_address').mask('099.099.099.099');
     }
 
 
