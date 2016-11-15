@@ -28,4 +28,13 @@ class Monitoramento extends InterfaceControllerAdmin
         $this->WriteTemplates('filtro');
     }
 
+    public function banco()
+    {
+        $this->load->library('LibMonitoramento');
+        $rs = "Não deu";
+        $rs = $this->libmonitoramento->verificarSyslog();
+
+        var_dump($rs);exit;
+    }
+
 }
