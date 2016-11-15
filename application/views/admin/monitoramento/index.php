@@ -86,7 +86,7 @@ endif;
 				    			<th><b>IP</b></th>
 				    			<th><b>Eventos</b></th>
 				    			<th><b>Status</b></th>
-				    			<th><b>Resolvido</b></th>
+				    			<th></th>
 				    		</tr>
 				    	</thead>
 				    	<tbody>
@@ -102,14 +102,38 @@ endif;
 									</a>
 				    			</td>
 				    			<td></td>
-				    			<td class="text-center"><a href="#"><span class="glyphicon glyphicon-ok"></span></a></td>
+				    			<td class="text-center">
+				    				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Resolução</button>
+				    			</td>
 				    		</tr>
 				    	</tbody>
 				    </table>
 			    </div>
 			</div>
 		</div>
-			<!--Fim-->
+		<!--Fim-->
+
+		<!-- Modal -->
+		  <div class="modal fade" id="myModal" role="dialog">
+		    <div class="modal-dialog">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		          <h4 class="modal-title">Qual foi o problema?</h4>
+		        </div>
+		        <div class="modal-body">
+		          <form action="#">
+		          	<label>Causa da falha: </label>
+		          	<input type="text" name="erro">
+		          	<input class="btn btn-primary" type="submit" value="Registrar">
+		          </form>
+		        </div>
+		      </div>
+		      
+		    </div>
+		  </div>
 
 		<!--Tabela que listará todos os eventos-->
 		<div class="container-fluid">
