@@ -34,26 +34,59 @@ endif;
 
 			<div class="col-xs-12 col-sm-12 col-md-8">
 				<div id="mapa" style="height: 320px; width: 920px;"></div>
-				<a role="button" data-toggle="collapse" href="#detalhe" aria-expanded="false" aria-controls="detalhe">
-					Posição no mapa
-				</a>
 			</div>
 		</div>
 		<br>
-		<!--Tabela de detalhe de acordo com a localização escolhida no mapa-->
+		<!--Tabela de monitoramento-->
 		<div class="container-fluid">
 			<div class="row">
-				<div class="collapse" id="detalhe">
-				  <div class="well">
+				<div class="jumbotron">
+					<h3 class="text-center" style="color: blue">Clientes em monitoramento</h3>
+					    <table class="table table-bordered table-stripped">
+					    	<thead>
+					    		<tr>
+					    			<th><b>#</b></th>
+					    			<th><b>Data Hora</b></th>
+					    			<th><b>Cliente</b></th>
+					    			<th><b>Número</b></th>
+					    			<th><b>IP</b></th>
+					    			<th><b>Eventos</b></th>
+					    			<th><b>Status</b></th>
+					    		</tr>
+					    	</thead>
+					    	<tbody>
+					    		<tr>
+					    			<td></td>
+					    			<td></td>
+					    			<td></td>
+					    			<td></td>
+					    			<td></td>
+					    			<td></td>
+					    			<td></td>
+					    		</tr>
+					    	</tbody>
+					    </table>
+				    </div>
+			</div>
+		</div>
+			<!--Fim-->
+
+		<!--Tabela de quarentena-->
+		<div class="container-fluid">
+			<div class="row">
+				<div class="jumbotron">
+					<h3 class="text-center" style="color: red">Clientes em quarentena</h3>
 				    <table class="table table-bordered table-stripped">
 				    	<thead>
 				    		<tr>
-				    			<th><b>Data</b></th>
-				    			<th><b>Hora</b></th>
+				    			<th><b>#</b></th>
+				    			<th><b>Data Hora</b></th>
+				    			<th><b>Cliente</b></th>
 				    			<th><b>Número</b></th>
 				    			<th><b>IP</b></th>
 				    			<th><b>Eventos</b></th>
-				    			<th></th>
+				    			<th><b>Status</b></th>
+				    			<th><b>Resolvido</b></th>
 				    		</tr>
 				    	</thead>
 				    	<tbody>
@@ -65,31 +98,46 @@ endif;
 				    			<td></td>
 				    			<td>
 					    			<a role="button" data-toggle="collapse" href="#eventos" aria-expanded="false" aria-controls="eventos">
-									  <span class="glyphicon glyphicon-wrench"></span>
+									  Quantidade de eventos
 									</a>
 				    			</td>
+				    			<td></td>
+				    			<td class="text-center"><a href="#"><span class="glyphicon glyphicon-ok"></span></a></td>
 				    		</tr>
 				    	</tbody>
 				    </table>
-				  </div>
-				</div>
+			    </div>
 			</div>
+		</div>
 			<!--Fim-->
 
-			<!--Tabela que listará todos os evendos daquela localização-->
+		<!--Tabela que listará todos os eventos-->
+		<div class="container-fluid">
 			<div class="row">
 				<div class="collapse" id="eventos">
-					<div class="well">
+					<div class="jumbotron">
+					<h3 class="text-center" style="color: red">Detalhes dos eventos</h3>
 						<table class="table table-bordered table-stripped">
 							<thead>
 								<tr>
-									<th><b>Início</b></th>
-									<th><b>Fim</b></th>
-									<th><b>CallerID</b></th>
+									<th><b>Seq</b></th>
+									<th><b>Data Hora</b></th>
+									<th><b>Cliente</b></th>
+									<th><b>Número</b></th>
+									<th><b>IP</b></th>
+									<th><b>Hora início</b></th>
+									<th><b>Hora fim</b></th>
+									<th><b>Valor do intervalo</b></th>
+
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
 									<td></td>
 									<td></td>
 									<td></td>
@@ -101,7 +149,7 @@ endif;
 			</div>
 			<!--Fim-->
 		</div>
-		<br>
+	<br>
 			
 
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDMHvCmWwSu_6qwIlf0KzkFfh61wbE092c&amp;sensor=false"></script>

@@ -8,6 +8,7 @@
             $class = $retorno['sucesso'] ? 'alert alert-success' : 'alert alert-danger';
             echo "<div class='{$class}'>{$retorno['mensagem']}</div>";
         }
+
         $id = (isset($dadosUsuario['id'])) ? $dadosUsuario['id'] : '';
     ?>
     <?php echo form_open(base_url() . 'Admin/Usuario/cadastro/' . $id); ?>
@@ -18,14 +19,6 @@
             $selected = set_value('perfil', (isset($dadosUsuario['id_perfil']) ? $dadosUsuario['id_perfil'] : ''));
             echo form_dropdown('perfil', $optionsPerfil, $selected, "id='perfil' class='form-control'");
           ?>
-        </div>
-
-        <div class="col-md-2 form-group">
-            <label for="status"><?php echo $this->lang->line('status');?>:</label>
-            <?php
-            $selected = set_value('status', (isset($dadosUsuario['status']) ? $dadosUsuario['status'] : STATUS_ATIVO));
-            echo form_dropdown('status', $optionsStatus, $selected, "id='status' class='form-control'");
-            ?>
         </div>
     </div>
     <div class="row">
@@ -56,6 +49,63 @@
             <label for="telefone"><?php echo $this->lang->line('telefone');?>:</label>
             <input type="text" class="mask-fone form-control" name="telefone" id="telefone" value="<?php echo $telefone; ?>" />
          </div>
+         <div class="col-md-2 form-group">
+            <?php $celular = set_value('celular', (isset($dadosUsuario['celular']) ? $dadosUsuario['celular'] : '')); ?>
+            <label for="celular"><?php echo $this->lang->line('celular');?>:</label>
+            <input type="text" class="mask-celular form-control" name="celular" id="celular" value="<?php echo $celular; ?>" />
+         </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <?php $endereco = set_value('endereco', (isset($dadosUsuario['endereco']) ? $dadosUsuario['endereco'] : '')); ?>
+            <label for="endereco"><?php echo $this->lang->line('endereco');?>:</label>
+            <input type="text" class="form-control" name="endereco" id="endereco" value="<?php echo $endereco; ?>" />
+        </div>
+        <div class="col-md-2 form-group">
+            <?php $numero = set_value('numero', (isset($dadosUsuario['numero']) ? $dadosUsuario['numero'] : '')); ?>
+            <label for="numero"><?php echo $this->lang->line('numero');?>:</label>
+            <input type="text" class="form-control" name="numero" id="numero" value="<?php echo $numero; ?>" maxlength="5" />
+        </div>
+         <div class="col-md-2 form-group">
+            <?php $complemento = set_value('complemento', (isset($dadosUsuario['complemento']) ? $dadosUsuario['complemento'] : '')); ?>
+            <label for="complemento"><?php echo $this->lang->line('complemento');?>:</label>
+            <input type="text" class="form-control" name="complemento" id="complemento" value="<?php echo $complemento; ?>" maxlength="30" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <?php $bairro = set_value('bairro', (isset($dadosUsuario['bairro']) ? $dadosUsuario['bairro'] : '')); ?>
+            <label for="bairro"><?php echo $this->lang->line('bairro');?>:</label>
+            <input type="text" class="form-control" name="bairro" id="bairro" value="<?php echo $bairro; ?>" maxlength="50" />
+        </div>
+          <div class="col-md-2 form-group">
+            <label for="estado"><?php echo $this->lang->line('estado');?>:</label>
+            <?php
+            $selected = set_value('estado', (isset($dadosUsuario['estado']) ? $dadosUsuario['estado'] : ''));
+            echo form_dropdown('estado', $optionsEstado, $selected, "id='estado' class='form-control'");
+            ?>
+        </div>
+          <div class="col-md-2 form-group">
+            <label for="cidade"><?php echo $this->lang->line('cidade');?>:</label>
+            <?php
+            $selected = set_value('cidade', (isset($dadosUsuario['id_cidade']) ? $dadosUsuario['id_cidade'] : ''));
+            echo form_dropdown('cidade', $optionsCidade, $selected, "id='cidade' class='form-control'");
+            ?>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <?php $cep = set_value('cep', (isset($dadosUsuario['cep']) ? $dadosUsuario['cep'] : '')); ?>
+            <label for="cep"><?php echo $this->lang->line('cep');?>:</label>
+            <input type="text" class="mask-cep form-control" name="cep" id="cep" value="<?php echo $cep; ?>" />
+        </div>
+        <div class="col-md-2 form-group">
+            <label for="status"><?php echo $this->lang->line('status');?>:</label>
+            <?php
+            $selected = set_value('status', (isset($dadosUsuario['status']) ? $dadosUsuario['status'] : STATUS_ATIVO));
+            echo form_dropdown('status', $optionsStatus, $selected, "id='status' class='form-control'");
+            ?>
+        </div>
     </div>
     <div class="row">
         <div class="col-md-7 text-right">
