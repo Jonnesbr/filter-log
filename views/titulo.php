@@ -5,6 +5,8 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/style.min.css" media="all" />
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript" src="<?php echo base_url(); ?>assets/dist/js/graficoErro.js"></script>
 	
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
