@@ -4,6 +4,7 @@ if (isset($retorno['mensagem']) && $retorno['mensagem']) :
     echo "<div class='{$class}'>{$retorno['mensagem']}</div>";
 endif;
 ?>
+
 		<!--Tabela de monitoramento-->
 		<div class="container-fluid">
 			<div class="row">
@@ -51,7 +52,7 @@ endif;
 				    			<td><?php echo $dado['cliente_ip'] ?></td>
 				    			<td><?php echo $dado['qtde'] ?></td>
 				    			<td class="text-center">
-				    				<a href="<?php echo base_url().'Admin/Monitramento/resolucao/'.$dado['cliente_ip'];?>" title=""><i class="glyphicon glyphicon-ok"></i> Resolução</a>
+				    				<a href="<?php echo base_url().'Admin/Monitoramento/resolucao/'.$dado['cliente_ip'];?>" title=""><i class="glyphicon glyphicon-ok"></i> Resolução</a>
 				    			</td>
 				    		</tr>
 				    		<?php } ?>
@@ -65,8 +66,3 @@ endif;
 		</div>
 	<br>
 			
-
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDMHvCmWwSu_6qwIlf0KzkFfh61wbE092c&amp;sensor=false"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/dist/js/mapa.js"></script>
-	
-	

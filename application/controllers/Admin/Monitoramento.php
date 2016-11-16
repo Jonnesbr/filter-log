@@ -9,7 +9,7 @@ class Monitoramento extends InterfaceControllerAdmin
     {
         parent::__construct();
         $this->viewsDirectory = 'admin/monitoramento';
-        $this->addBreadCrumbs($this->lang->line('monitoramento'), true);
+        $this->addBreadCrumbs('Monitoramento', true);
     }
 
     public function index()
@@ -117,6 +117,53 @@ class Monitoramento extends InterfaceControllerAdmin
         $rs = $this->libmonitoramento->buscarEvento();
 
         $this->templateAddItem('principal', 'dadosSemEventos', $rs);
+    }
+
+
+    /**
+     * Inicio resolucao
+     */
+
+    public function resolucao($argId = null)
+    {
+        $this->carregarSelectCausa();
+
+        if ($this->input->post())
+            $this->processarResolucao();
+
+        $this->WriteTemplates('resolucao');
+        $this->templateAddItem('principal', 'dadosCliente', $argId);
+    }
+
+    private function carregarSelectCausa()
+    {
+        $this->load->library('AppBase/LibCrud');
+        $this->libcrud->setModel('modelcausa');
+        $this->libcrud->campos = 'id, descricao';
+        $this->libcrud->order = 'descricao ASC';
+        $rs = $this->libcrud->buscar();
+
+        $causas = array('' => $this->lang->line('selecione'));
+
+        foreach ($rs as $causa)
+            $causas[$causa['id']] = $causa['descricao'];
+
+        $this->templateAddItem('principal', 'optionsCausa', $causas);
+    }
+
+    private function processarResolucao()
+    {
+        $dadosPost = array();
+        $dadosPost['cliente_ip'] = $this->input->post('cliente_ip');
+        $dadosPost['causa_id'] = $this->input->post('causa');
+
+        $this->load->library('AppBase/LibCrud');
+        $this->libcrud->setModel('modelresolucaocliente');
+
+        if ($this->libcrud->inserir($dadosPost)) {
+            $this->session->set_flashdata('retorno', array('sucesso' => true, 'mensagem' => 'Resolução Informada com Sucesso'));
+            redirect(base_url().'Admin/Monitoramento/index', 'refresh');
+        }
     }
 
 }

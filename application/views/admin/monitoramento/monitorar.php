@@ -19,16 +19,6 @@
                 echo form_dropdown('cliente', $optionsCliente, $selected, "id='cliente' class='form-control'");
                 ?>
             </div>
-
-<!--            <div class="col-md-2 form-group">-->
-<!--                <label for="data_inicio">--><?php //echo $this->lang->line('data_inicio');?><!--:</label>-->
-<!--                <input type="text" class="data-inicial form-control" name="data_inicio" id="data_inicio" value="--><?php //echo set_value('data_inicio'); ?><!--" />-->
-<!--            </div>-->
-<!--            <div class="col-md-2 form-group">-->
-<!--                <label for="data_fim">--><?php //echo $this->lang->line('data_fim');?><!--:</label>-->
-<!--                <input type="text" class="data-final form-control" name="data_fim" id="data_fim" value="--><?php //echo set_value('data_fim'); ?><!--" />-->
-<!--            </div>-->
-
         </div>
 
         <div class="row">
