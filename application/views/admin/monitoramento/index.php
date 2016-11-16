@@ -4,13 +4,6 @@ if (isset($retorno['mensagem']) && $retorno['mensagem']) :
     echo "<div class='{$class}'>{$retorno['mensagem']}</div>";
 endif;
 ?>
-
-		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12">
-				<div id="mapa" style="height: 320px; width: 1410px;"></div>
-			</div>
-		</div>
-		<br>
 		<!--Tabela de monitoramento-->
 		<div class="container-fluid">
 			<div class="row">
