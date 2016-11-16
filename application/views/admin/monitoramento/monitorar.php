@@ -1,26 +1,3 @@
-<style type="text/css">
-    .glyphicon-refresh-animate {
-    -animation: spin .7s infinite linear;
-    -webkit-animation: spin2 .7s infinite linear;
-}
-
-@-webkit-keyframes spin2 {
-    from { -webkit-transform: rotate(0deg);}
-    to { -webkit-transform: rotate(360deg);}
-}
-
-@keyframes spin {
-    from { transform: scale(1) rotate(0deg);}
-    to { transform: scale(1) rotate(360deg);}
-}
-</style>
-
-<script type="text/javascript">
-    $( "#submitCadastro" ).click(function() {
-      $(document).find(#carregando).html("<span class='glyphicon glyphicon-refresh glyphicon-refresh-animate></span> Loading...");
-    });
-</script>
-
 <div class="panel panel-default">
     <div class="panel-heading">
         <h3 class="panel-title">Atualizar Eventos Manualmente</h3>
@@ -42,16 +19,6 @@
                 echo form_dropdown('cliente', $optionsCliente, $selected, "id='cliente' class='form-control'");
                 ?>
             </div>
-
-<!--            <div class="col-md-2 form-group">-->
-<!--                <label for="data_inicio">--><?php //echo $this->lang->line('data_inicio');?><!--:</label>-->
-<!--                <input type="text" class="data-inicial form-control" name="data_inicio" id="data_inicio" value="--><?php //echo set_value('data_inicio'); ?><!--" />-->
-<!--            </div>-->
-<!--            <div class="col-md-2 form-group">-->
-<!--                <label for="data_fim">--><?php //echo $this->lang->line('data_fim');?><!--:</label>-->
-<!--                <input type="text" class="data-final form-control" name="data_fim" id="data_fim" value="--><?php //echo set_value('data_fim'); ?><!--" />-->
-<!--            </div>-->
-
         </div>
 
         <div class="row">

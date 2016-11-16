@@ -9,7 +9,7 @@ class Monitoramento extends InterfaceControllerAdmin
     {
         parent::__construct();
         $this->viewsDirectory = 'admin/monitoramento';
-        $this->addBreadCrumbs($this->lang->line('monitoramento'), true);
+        $this->addBreadCrumbs('Monitoramento', true);
     }
 
     public function index()
@@ -124,7 +124,7 @@ class Monitoramento extends InterfaceControllerAdmin
      * Inicio resolucao
      */
 
-    public function resolucao($argId)
+    public function resolucao($argId = null)
     {
         $this->carregarSelectCausa();
 
@@ -132,6 +132,7 @@ class Monitoramento extends InterfaceControllerAdmin
             $this->processarResolucao();
 
         $this->WriteTemplates('resolucao');
+        $this->templateAddItem('principal', 'dadosCliente', $argId);
     }
 
     private function carregarSelectCausa()
@@ -157,10 +158,10 @@ class Monitoramento extends InterfaceControllerAdmin
         $dadosPost['causa_id'] = $this->input->post('causa');
 
         $this->load->library('AppBase/LibCrud');
-        $this->libcrud->setModel('modelcliente');
+        $this->libcrud->setModel('modelresolucaocliente');
 
         if ($this->libcrud->inserir($dadosPost)) {
-            $this->session->set_flashdata('retorno', array('sucesso' => true, 'mensagem' => $this->lang->line('sucesso_cadastro')));
+            $this->session->set_flashdata('retorno', array('sucesso' => true, 'mensagem' => 'Resolução Informada com Sucesso'));
             redirect(base_url().'Admin/Monitoramento/index', 'refresh');
         }
     }

@@ -5,11 +5,11 @@ if (isset($retorno['mensagem']) && $retorno['mensagem']) :
 endif;
 ?>
 
-		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12">
-				<div id="mapa" style="height: 320px; width: 1410px;"></div>
-			</div>
-		</div>
+<!--		<div class="row">-->
+<!--			<div class="col-xs-12 col-sm-12 col-md-12">-->
+<!--				<div id="mapa" style="height: 320px; width: 1410px;"></div>-->
+<!--			</div>-->
+<!--		</div>-->
 		<br>
 		<!--Tabela de monitoramento-->
 		<div class="container-fluid">
@@ -58,7 +58,7 @@ endif;
 				    			<td><?php echo $dado['cliente_ip'] ?></td>
 				    			<td><?php echo $dado['qtde'] ?></td>
 				    			<td class="text-center">
-				    				<a href="<?php echo base_url().'Admin/Monitramento/resolucao/'.$dado['cliente_ip'];?>" title=""><i class="glyphicon glyphicon-ok"></i> Resolução</a>
+				    				<a href="<?php echo base_url().'Admin/Monitoramento/resolucao/'.$dado['cliente_ip'];?>" title=""><i class="glyphicon glyphicon-ok"></i> Resolução</a>
 				    			</td>
 				    		</tr>
 				    		<?php } ?>
@@ -73,7 +73,7 @@ endif;
 	<br>
 			
 
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDMHvCmWwSu_6qwIlf0KzkFfh61wbE092c&amp;sensor=false"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/dist/js/mapa.js"></script>
+<!--<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDMHvCmWwSu_6qwIlf0KzkFfh61wbE092c&amp;sensor=false"></script>-->
+<!--<script type="text/javascript" src="--><?php //echo base_url(); ?><!--assets/dist/js/mapa.js"></script>-->
 	
 	
