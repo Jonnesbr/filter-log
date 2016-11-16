@@ -119,4 +119,50 @@ class Monitoramento extends InterfaceControllerAdmin
         $this->templateAddItem('principal', 'dadosSemEventos', $rs);
     }
 
+
+    /**
+     * Inicio resolucao
+     */
+
+    public function resolucao($argId)
+    {
+        $this->carregarSelectCausa();
+
+        if ($this->input->post())
+            $this->processarResolucao();
+
+        $this->WriteTemplates('resolucao');
+    }
+
+    private function carregarSelectCausa()
+    {
+        $this->load->library('AppBase/LibCrud');
+        $this->libcrud->setModel('modelcausa');
+        $this->libcrud->campos = 'id, descricao';
+        $this->libcrud->order = 'descricao ASC';
+        $rs = $this->libcrud->buscar();
+
+        $causas = array('' => $this->lang->line('selecione'));
+
+        foreach ($rs as $causa)
+            $causas[$causa['id']] = $causa['descricao'];
+
+        $this->templateAddItem('principal', 'optionsCausa', $causas);
+    }
+
+    private function processarResolucao()
+    {
+        $dadosPost = array();
+        $dadosPost['cliente_ip'] = $this->input->post('cliente_ip');
+        $dadosPost['causa_id'] = $this->input->post('causa');
+
+        $this->load->library('AppBase/LibCrud');
+        $this->libcrud->setModel('modelcliente');
+
+        if ($this->libcrud->inserir($dadosPost)) {
+            $this->session->set_flashdata('retorno', array('sucesso' => true, 'mensagem' => $this->lang->line('sucesso_cadastro')));
+            redirect(base_url().'Admin/Monitoramento/index', 'refresh');
+        }
+    }
+
 }
