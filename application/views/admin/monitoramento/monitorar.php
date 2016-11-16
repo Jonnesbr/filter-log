@@ -1,3 +1,26 @@
+<!--<style type="text/css">
+    .glyphicon-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -webkit-animation: spin2 .7s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+</style>
+
+<script type="text/javascript">
+    $( "#submitCadastro" ).click(function() {
+      $(document).find(#carregando).html("<span class='glyphicon glyphicon-refresh glyphicon-refresh-animate></span> Loading...");
+    });
+</script>!-->
+
 <div class="panel panel-default">
     <div class="panel-heading">
         <h3 class="panel-title">Atualizar Eventos Manualmente</h3>
@@ -37,6 +60,7 @@
                 <input name="btnVoltar" class="btn-redirect btn btn-default" type="button" data-url="<?php echo base_url(); ?>Admin/Monitoramento" value="<?php echo $this->lang->line('voltar'); ?>"/>
             </div>
         </div>
+        <!--<div id="carregando"></div>!-->
         <?php echo form_close(); ?>
     </div>
 </div>
