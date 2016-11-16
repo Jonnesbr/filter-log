@@ -45,22 +45,12 @@ endif;
 					    <table class="table table-bordered table-stripped">
 					    	<thead>
 					    		<tr>
-					    			<th><b>#</b></th>
-					    			<th><b>Data Hora</b></th>
 					    			<th><b>Cliente</b></th>
-					    			<th><b>Número</b></th>
 					    			<th><b>IP</b></th>
-					    			<th><b>Eventos</b></th>
-					    			<th><b>Status</b></th>
 					    		</tr>
 					    	</thead>
 					    	<tbody>
 					    		<tr>
-					    			<td></td>
-					    			<td></td>
-					    			<td></td>
-					    			<td></td>
-					    			<td></td>
 					    			<td></td>
 					    			<td></td>
 					    		</tr>
@@ -69,7 +59,7 @@ endif;
 				    </div>
 			</div>
 		</div>
-			<!--Fim-->
+		<!--Fim-->
 
 		<!--Tabela de quarentena-->
 		<div class="container-fluid">
@@ -79,21 +69,14 @@ endif;
 				    <table class="table table-bordered table-stripped">
 				    	<thead>
 				    		<tr>
-				    			<th><b>#</b></th>
-				    			<th><b>Data Hora</b></th>
 				    			<th><b>Cliente</b></th>
-				    			<th><b>Número</b></th>
 				    			<th><b>IP</b></th>
 				    			<th><b>Eventos</b></th>
-				    			<th><b>Status</b></th>
 				    			<th></th>
 				    		</tr>
 				    	</thead>
 				    	<tbody>
 				    		<tr>
-				    			<td></td>
-				    			<td></td>
-				    			<td></td>
 				    			<td></td>
 				    			<td></td>
 				    			<td>
