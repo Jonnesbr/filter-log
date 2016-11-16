@@ -19,4 +19,15 @@ class modelMonitoramento extends Model
         return $this->resultArray();
     }
 
+    public function buscarEvento()
+    {
+        $this->setSelect($this->campos);
+        $this->setLimit($this->limit,$this->offset);
+        $this->setWhere($this->where);
+        $this->setOrderBy($this->order);
+        $this->setGroupBy($this->groupBy);
+        $this->db->join('cliente', 'monitoramento.cliente_ip = cliente.ip');
+        return $this->resultArray();
+    }
+
 }

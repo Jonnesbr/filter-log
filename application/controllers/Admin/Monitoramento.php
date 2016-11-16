@@ -14,6 +14,8 @@ class Monitoramento extends InterfaceControllerAdmin
 
     public function index()
     {
+        $this->carregarEventos();
+
         if ($this->session->flashdata('retorno'))
             $this->templateAddItem('principal', 'retorno', $this->session->flashdata('retorno'));
 
@@ -28,6 +30,9 @@ class Monitoramento extends InterfaceControllerAdmin
         $this->WriteTemplates('filtro');
     }
 
+    /**
+     * Inicio do processo de captura de eventos no banco Life
+     */
     public function monitorar()
     {
         $this->carregarSelectCliente();
@@ -87,6 +92,18 @@ class Monitoramento extends InterfaceControllerAdmin
             $clientes[$cliente['ip']] = $cliente['nome'];
 
         $this->templateAddItem('principal', 'optionsCliente', $clientes);
+    }
+
+    private function carregarEventos()
+    {
+        $this->load->library('LibMonitoramento');
+        $this->libmonitoramento->setModel('modelmonitoramento');
+        $this->libmonitoramento->campos = 'cliente.nome, monitoramento.cliente_ip, COUNT(monitoramento.cliente_ip) as qtde';
+        $this->libmonitoramento->groupBy = 'cliente_ip';
+        $this->libmonitoramento->order = 'cliente_ip ASC';
+        $rs = $this->libmonitoramento->buscarEvento();
+
+        $this->templateAddItem('principal', 'dadosEventos', $rs);
     }
 
 }
