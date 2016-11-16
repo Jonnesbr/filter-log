@@ -76,7 +76,8 @@ abstract class InterfaceControllerAdmin extends InterfaceController {
             'Monitoramento' => array(
                 'Monitoramento' => 'Monitoramento/index',
                 'Tempo real' => 'Monitoramento/tempoReal',
-                'Filtro' => 'Monitoramento/filtro'
+                'Filtro' => 'Monitoramento/filtro',
+                'Gerar dados' => 'Monitoramento/monitorar'
             ),
             'Configurações' => 'Configuracoes/index'
         );

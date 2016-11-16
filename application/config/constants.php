@@ -46,6 +46,11 @@ define('EMAIL_RECUPERACAO', 'jpaulo.bcc@gmail.com');
 define('EMAIL_RECUPERACAO_NOME', 'FilterLog - RECUPERAÇÃO');
 define('PERFIL_ADMINISTRADOR', '1');
 
+//Parametros para captura de eventos com erro
+define('INTERVALO_MINIMO', 5.50);
+define('INTERVALO_MAXIMO', 6.10);
+
+
 //Extensões de arquivos permitidos para upload
 define('FILES_EXTENSION', 'doc|jpeg|jpg|pdf|bitmap|png|xls|docx|xlsx|ppt|pptx');
 
