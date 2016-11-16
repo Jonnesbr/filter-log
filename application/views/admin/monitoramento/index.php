@@ -6,34 +6,8 @@ endif;
 ?>
 
 		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-4">
-				<div class="jumbotron">
-				<h3 class="text-center">Monitramento</h3>
-				<br>
-					<form class="form-horizontal">
-						<div class="form-group">
-							<label class="col-xs-2 control-label">Nome: </label>
-							<div class="col-xs-10">	
-								<input type="text" name="nome" class="form-control">
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="col-xs-2 control-label">IP: </label>
-							<div class="col-xs-10">
-								<input type="text" name="ip" class="form-control">
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="col-sm-offset-2 col-sm-10">
-								<button type="submit" class="btn btn-primary">Monitorar</button>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-
-			<div class="col-xs-12 col-sm-12 col-md-8">
-				<div id="mapa" style="height: 320px; width: 920px;"></div>
+			<div class="col-xs-12 col-sm-12 col-md-12">
+				<div id="mapa" style="height: 320px; width: 1410px;"></div>
 			</div>
 		</div>
 		<br>
@@ -50,10 +24,12 @@ endif;
 					    		</tr>
 					    	</thead>
 					    	<tbody>
+					    	<?php foreach($dadosSemEventos as $dados){ ?>
 					    		<tr>
-					    			<td></td>
-					    			<td></td>
+					    			<td><?php echo $dados['nome'] ?></td>
+					    			<td><?php echo $dados['cliente_ip'] ?></td>
 					    		</tr>
+					    	<?php } ?>
 					    	</tbody>
 					    </table>
 				    </div>
@@ -80,14 +56,9 @@ endif;
 				    		<tr>
 				    			<td><?php echo $dado['nome'] ?></td>
 				    			<td><?php echo $dado['cliente_ip'] ?></td>
-				    			<td>
-					    			<a role="button" data-toggle="collapse" href="#eventos" aria-expanded="false" aria-controls="eventos">
-									  <?php echo $dado['qtde'] ?>
-									</a>
-				    			</td>
-				    			<td></td>
+				    			<td><?php echo $dado['qtde'] ?></td>
 				    			<td class="text-center">
-				    				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Resolução</button>
+				    				<a href="<?php echo base_url().'Admin/Monitramento/resolucao/'.$dado['cliente_ip'];?>" title=""><i class="glyphicon glyphicon-ok"></i> Resolução</a>
 				    			</td>
 				    		</tr>
 				    		<?php } ?>
@@ -98,65 +69,6 @@ endif;
 		</div>
 		<!--Fim-->
 
-		<!-- Modal -->
-		  <div class="modal fade" id="myModal" role="dialog">
-		    <div class="modal-dialog">
-		    
-		      <!-- Modal content-->
-		      <div class="modal-content">
-		        <div class="modal-header">
-		          <button type="button" class="close" data-dismiss="modal">&times;</button>
-		          <h4 class="modal-title">Qual foi o problema?</h4>
-		        </div>
-		        <div class="modal-body">
-		          <form action="#">
-		          	<label>Causa da falha: </label>
-		          	<input type="text" name="erro">
-		          	<input class="btn btn-primary" type="submit" value="Registrar">
-		          </form>
-		        </div>
-		      </div>
-		      
-		    </div>
-		  </div>
-
-		<!--Tabela que listará todos os eventos-->
-		<div class="container-fluid">
-			<div class="row">
-				<div class="collapse" id="eventos">
-					<div class="jumbotron">
-					<h3 class="text-center" style="color: red">Detalhes dos eventos</h3>
-						<table class="table table-bordered table-stripped">
-							<thead>
-								<tr>
-									<th><b>Seq</b></th>
-									<th><b>Data Hora</b></th>
-									<th><b>Cliente</b></th>
-									<th><b>Número</b></th>
-									<th><b>IP</b></th>
-									<th><b>Hora início</b></th>
-									<th><b>Hora fim</b></th>
-									<th><b>Valor do intervalo</b></th>
-
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-			<!--Fim-->
 		</div>
 	<br>
 			
