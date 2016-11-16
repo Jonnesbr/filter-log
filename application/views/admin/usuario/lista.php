@@ -17,9 +17,8 @@
 					<td><?php echo $row['perfil']?></td>
 					<td class="text-right">
 						<div class="btn-group">
-  							<a class="btn btn-primary" href="#"><i class="fa fa-bars fa-fw"></i> <?php echo $this->lang->line('acoes');?></a>
   							<a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
-    							<span class="fa fa-caret-down"></span>
+    							<span class="glyphicon glyphicon-wrench"></span>
     						</a>
 							<ul class="dropdown-menu">
 								<li>

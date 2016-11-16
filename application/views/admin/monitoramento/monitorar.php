@@ -33,7 +33,7 @@
 
         <div class="row">
             <div class="col-md-7">
-                <input name="submitCadastro" class="btn btn-success" id="submitCadastro" type="submit" value="Atualizar"/>
+                <input name="submitCadastro" class="btn btn-primary" id="submitCadastro" type="submit" value="Atualizar"/>
                 <input name="btnVoltar" class="btn-redirect btn btn-default" type="button" data-url="<?php echo base_url(); ?>Admin/Monitoramento" value="<?php echo $this->lang->line('voltar'); ?>"/>
             </div>
         </div>

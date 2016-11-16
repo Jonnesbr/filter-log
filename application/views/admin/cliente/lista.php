@@ -14,9 +14,8 @@
             <td><?php echo $row['ip']?></td>
             <td class="pull-right">
                 <div class="btn-group">
-                    <a class="btn btn-primary" href="#"><i class="fa fa-bars fa-fw"></i> <?php echo $this->lang->line('acoes');?></a>
                     <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
-                        <span class="fa fa-caret-down"></span>
+                        <span class="glyphicon glyphicon-wrench"></span>
                     </a>
                     <ul class="dropdown-menu">
                         <li><a href="<?php echo base_url().'Admin/Cliente/cadastro/'.$row['id'];?>" title="<?php echo $this->lang->line('editar');?>"><i class="fa fa-pencil fa-fw"></i><?php echo $this->lang->line('editar');?></a></li>

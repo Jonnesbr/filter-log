@@ -17,7 +17,7 @@
                     <input type="text" id="nome" name="nome" class="form-control" value="<?php echo set_value('nome');?>";>
                 </div>
                 <div class="col-md-2 form-group">
-                    <button id="buscar" name="buscar" class="btn btn-success button-form-horizontal"><?php echo $this->lang->line('buscar')?></button>
+                    <button id="buscar" name="buscar" class="btn btn-primary button-form-horizontal"><?php echo $this->lang->line('buscar')?></button>
                 </div>
             </div>
         </form>

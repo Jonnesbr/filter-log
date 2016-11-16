@@ -108,8 +108,8 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-7 text-right">
-            <input name="submitCadastro" class="btn btn-success" id="submitCadastro" type="submit" value="<?php echo $this->lang->line('salvar'); ?>"/>
+        <div class="col-md-7 text-left">
+            <input name="submitCadastro" class="btn btn-primary" id="submitCadastro" type="submit" value="<?php echo $this->lang->line('salvar'); ?>"/>
             <input name="btnVoltar" class="btn-redirect btn btn-default" type="button" data-url="<?php echo base_url(); ?>Admin/Usuario" value="<?php echo $this->lang->line('voltar'); ?>"/>
         </div>
     </div>
