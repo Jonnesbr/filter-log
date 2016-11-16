@@ -15,6 +15,7 @@ class Monitoramento extends InterfaceControllerAdmin
     public function index()
     {
         $this->carregarEventos();
+        $this->carregarClientesSemEventos();
 
         if ($this->session->flashdata('retorno'))
             $this->templateAddItem('principal', 'retorno', $this->session->flashdata('retorno'));
@@ -104,6 +105,18 @@ class Monitoramento extends InterfaceControllerAdmin
         $rs = $this->libmonitoramento->buscarEvento();
 
         $this->templateAddItem('principal', 'dadosEventos', $rs);
+    }
+
+    private function carregarClientesSemEventos()
+    {
+        $this->load->library('LibMonitoramento');
+        $this->libmonitoramento->setModel('modelmonitoramento');
+        $this->libmonitoramento->campos = 'cliente.nome, monitoramento.cliente_ip, monitoramento.resolucao';
+        $this->libmonitoramento->where = array('monitoramento.resolucao' => STATUS_ATIVO);
+        $this->libmonitoramento->order = 'cliente_ip ASC';
+        $rs = $this->libmonitoramento->buscarEvento();
+
+        $this->templateAddItem('principal', 'dadosSemEventos', $rs);
     }
 
 }
