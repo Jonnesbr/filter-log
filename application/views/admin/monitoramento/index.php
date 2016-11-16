@@ -76,12 +76,13 @@ endif;
 				    		</tr>
 				    	</thead>
 				    	<tbody>
+				    	<?php foreach($dadosEventos as $dado){ ?>
 				    		<tr>
-				    			<td></td>
-				    			<td></td>
+				    			<td><?php echo $dado['nome'] ?></td>
+				    			<td><?php echo $dado['cliente_ip'] ?></td>
 				    			<td>
 					    			<a role="button" data-toggle="collapse" href="#eventos" aria-expanded="false" aria-controls="eventos">
-									  Quantidade de eventos
+									  <?php echo $dado['qtde'] ?>
 									</a>
 				    			</td>
 				    			<td></td>
@@ -89,6 +90,7 @@ endif;
 				    				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Resolução</button>
 				    			</td>
 				    		</tr>
+				    		<?php } ?>
 				    	</tbody>
 				    </table>
 			    </div>
