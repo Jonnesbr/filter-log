@@ -99,7 +99,7 @@ class Monitoramento extends InterfaceControllerAdmin
     {
         $this->load->library('LibMonitoramento');
         $this->libmonitoramento->setModel('modelmonitoramento');
-        $this->libmonitoramento->campos = 'cliente.nome, monitoramento.cliente_ip, COUNT(monitoramento.cliente_ip) as qtde';
+        $this->libmonitoramento->campos = 'cliente.nome, monitoramento.cliente_ip, COUNT(monitoramento.cliente_ip) as qtde, cliente.id as cliente_id';
         $this->libmonitoramento->groupBy = 'cliente_ip';
         $this->libmonitoramento->order = 'cliente_ip ASC';
         $rs = $this->libmonitoramento->buscarEvento();

@@ -1,4 +1,4 @@
-<!--<style type="text/css">
+<style type="text/css">
     .glyphicon-refresh-animate {
     -animation: spin .7s infinite linear;
     -webkit-animation: spin2 .7s infinite linear;
@@ -19,7 +19,7 @@
     $( "#submitCadastro" ).click(function() {
       $(document).find(#carregando).html("<span class='glyphicon glyphicon-refresh glyphicon-refresh-animate></span> Loading...");
     });
-</script>!-->
+</script>
 
 <div class="panel panel-default">
     <div class="panel-heading">
@@ -60,7 +60,7 @@
                 <input name="btnVoltar" class="btn-redirect btn btn-default" type="button" data-url="<?php echo base_url(); ?>Admin/Monitoramento" value="<?php echo $this->lang->line('voltar'); ?>"/>
             </div>
         </div>
-        <!--<div id="carregando"></div>!-->
+        <div id="carregando"></div>
         <?php echo form_close(); ?>
     </div>
 </div>

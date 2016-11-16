@@ -94,11 +94,6 @@ class LibMonitoramento extends LibCrud
                 $primeiro['id'] = $valor['id'];
 
             }
-
-            echo "<pre>";
-            echo "Eventos capturados com sucesso";
-            echo "<br><br>";
-            var_dump($dados);exit;
         }
     }
 
