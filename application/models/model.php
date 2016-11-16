@@ -100,6 +100,12 @@ abstract class model extends CI_Model {
 			$this->db->order_by($argOrderBy);
 	}
 
+	protected function setGroupBy($argGroupBy)
+	{
+		if(isset($argGroupBy))
+			$this->db->group_by($argGroupBy);
+	}
+
 	public function find()
 	{
 		if (isset($this->where)) $this->setWhere($this->where);

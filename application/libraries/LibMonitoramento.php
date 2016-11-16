@@ -116,4 +116,16 @@ class LibMonitoramento extends LibCrud
         $this->inserir($dados);
         return true;
     }
+
+    public function buscarEvento()
+    {
+        $this->CI->{$this->model}->where = $this->where;
+        $this->CI->{$this->model}->campos = $this->campos;
+        $this->CI->{$this->model}->limit = $this->limit;
+        $this->CI->{$this->model}->order = $this->order;
+        $this->CI->{$this->model}->offset = $this->offSet;
+        $this->CI->{$this->model}->groupBy = $this->groupBy;
+        $this->CI->{$this->model}->having = $this->having;
+        return $this->CI->{$this->model}->buscarEvento();
+    }
 }
