@@ -47,7 +47,7 @@ define('EMAIL_RECUPERACAO_NOME', 'FilterLog - RECUPERAÇÃO');
 define('PERFIL_ADMINISTRADOR', '1');
 
 //Parametros para captura de eventos com erro
-define('INTERVALO_MINIMO', 5.50);
+define('INTERVALO_MINIMO', 5.40);
 define('INTERVALO_MAXIMO', 6.10);
 
 

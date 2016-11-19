@@ -16,6 +16,11 @@ class Monitoramento extends InterfaceControllerAdmin
     {
         $this->carregarEventos();
         $this->carregarClientesSemEventos();
+        
+        $this->carregarSelectCliente();
+
+        if ($this->input->post())
+            $this->processarMonitoramentoPost();
 
         if ($this->session->flashdata('retorno'))
             $this->templateAddItem('principal', 'retorno', $this->session->flashdata('retorno'));
@@ -131,8 +136,8 @@ class Monitoramento extends InterfaceControllerAdmin
         if ($this->input->post())
             $this->processarResolucao();
 
-        $this->WriteTemplates('resolucao');
         $this->templateAddItem('principal', 'dadosCliente', $argId);
+        $this->WriteTemplates('resolucao');
     }
 
     private function carregarSelectCausa()
@@ -153,6 +158,10 @@ class Monitoramento extends InterfaceControllerAdmin
 
     private function processarResolucao()
     {
+
+
+//        var_dump($this->input->post());exit;
+
         $dadosPost = array();
         $dadosPost['cliente_ip'] = $this->input->post('cliente_ip');
         $dadosPost['causa_id'] = $this->input->post('causa');
