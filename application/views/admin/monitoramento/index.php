@@ -50,7 +50,11 @@ endif;
 				    		<tr>
 				    			<td><?php echo $dado['nome'] ?></td>
 				    			<td><?php echo $dado['cliente_ip'] ?></td>
-				    			<td><?php echo $dado['qtde'] ?></td>
+				    			<td>
+				    			<a role="button" data-toggle="collapse" href="#eventos" aria-expanded="false" aria-controls="eventos">
+				    				<?php echo $dado['qtde'] ?>
+				    			</a>
+				    			</td>
 				    			<td class="text-center">
 				    				<a href="<?php echo base_url().'Admin/Monitoramento/resolucao/'.$dado['cliente_ip'];?>" title=""><i class="glyphicon glyphicon-ok"></i> Resolução</a>
 				    			</td>
@@ -59,6 +63,31 @@ endif;
 				    	</tbody>
 				    </table>
 			    </div>
+			</div>
+		</div>
+		<!--Fim-->
+
+		<!--Tabela que listará todos os evendos daquela localização-->
+		<div class="row">
+			<div class="collapse col-xs-12 col-sm-12 col-md-6" id="eventos">
+				<div class="well">
+					<table class="table table-bordered table-stripped">
+						<thead>
+							<tr>
+								<th><b>Início</b></th>
+								<th><b>Fim</b></th>
+								<th><b>Valor do Intervalo</b></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
 		<!--Fim-->
