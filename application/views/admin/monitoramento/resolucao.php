@@ -9,10 +9,10 @@
             echo "<div class='{$class}'>{$retorno['mensagem']}</div>";
         endif;
 
-        $id = (isset($dadosCliente['cliente_ip'])) ? $dadosCliente['cliente_ip'] : '';
+        $id = (isset($dadosCliente)) ? $dadosCliente : '';
         ?>
         <?php echo form_open(base_url() . 'Admin/Monitoramento/resolucao/' . $id);
-        echo form_hidden('cliente_id', $id);
+        echo form_hidden('cliente_ip', $id);
         ?>
         <div class="row">
             <div class="col-md-3 form-group">
