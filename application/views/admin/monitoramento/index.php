@@ -35,12 +35,6 @@ endif;
 </div>
 
 
-<!--		<div class="row">-->
-<!--			<div class="col-xs-12 col-sm-12 col-md-12">-->
-<!--				<div id="mapa" style="height: 320px; width: 1410px;"></div>-->
-<!--			</div>-->
-<!--		</div>-->
-		<br>
 		<!--Tabela de monitoramento-->
 		<div class="container-fluid">
 			<div class="row">
@@ -102,8 +96,3 @@ endif;
 		</div>
 	<br>
 			
-
-<!--<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDMHvCmWwSu_6qwIlf0KzkFfh61wbE092c&amp;sensor=false"></script>-->
-<!--<script type="text/javascript" src="--><?php //echo base_url(); ?><!--assets/dist/js/mapa.js"></script>-->
-	
-	

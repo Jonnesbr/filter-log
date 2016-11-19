@@ -11,12 +11,8 @@ endif;
 	      function drawChart() {
 	        var data = google.visualization.arrayToDataTable([
 	          ['Causas', 'Frequência'],
-	          ['Cabo rompido',     11],
-	          ['Switch queimado',      2],
-	          ['Problema switch principal',  2],
-	          ['Cascateamento', 2],
-	          ['Defeito no cliente',    7],
-	          ['Problema de energia', 8]
+	          ['Cabo rompido',     2],
+	          ['Defeito no cliente',    1]
 	        ]);
 
 	        var options = {
