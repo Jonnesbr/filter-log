@@ -50,6 +50,12 @@ define('PERFIL_ADMINISTRADOR', '1');
 define('INTERVALO_MINIMO', 5.40);
 define('INTERVALO_MAXIMO', 6.10);
 
+//Parametros para identificação por cor
+define('SINAL_VERDE', 4);
+define('SINAL_AMARELO_MIN', 5);
+define('SINAL_AMARELO_MAX', 9);
+define('SINAL_VERMELHO', 10);
+
 //Extensões de arquivos permitidos para upload
 define('FILES_EXTENSION', 'doc|jpeg|jpg|pdf|bitmap|png|xls|docx|xlsx|ppt|pptx');
 

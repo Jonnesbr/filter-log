@@ -26,7 +26,6 @@ endif;
 		<div class="row">
 			<div class="col-md-7">
 				<input name="submitCadastro" class="btn btn-primary" id="submitCadastro" type="submit" value="Atualizar"/>
-				<input name="btnVoltar" class="btn-redirect btn btn-default" type="button" data-url="<?php echo base_url(); ?>Admin/Monitoramento" value="<?php echo $this->lang->line('voltar'); ?>"/>
 			</div>
 		</div>
 		<div id="carregando"></div>
@@ -81,13 +80,13 @@ endif;
 				    			<td><?php echo $dado['nome'] ?></td>
 				    			<td><?php echo $dado['cliente_ip'] ?></td>
                                 <?php
-                                if (intval($dado['qtde']) <= 4) : ?>
+                                if (intval($dado['qtde']) <= SINAL_VERDE) : ?>
                                     <td class="text-center" ><span class="label label-success"><?php echo $dado['qtde']; ?></span></td>
                                 <?php
-                                elseif (intval($dado['qtde']) >= 5 && intval($dado['qtde']) <= 9) : ?>
+                                elseif (intval($dado['qtde']) >= SINAL_AMARELO_MIN && intval($dado['qtde']) <= SINAL_AMARELO_MAX) : ?>
                                     <td class="text-center"><span class="label label-warning"><?php echo $dado['qtde']; ?></span></td>
                                 <?php
-                                elseif (intval($dado['qtde']) >= 10) : ?>
+                                elseif (intval($dado['qtde']) >= SINAL_VERMELHO) : ?>
                                     <td class="text-center"><span class="label label-danger"><?php echo $dado['qtde']; ?></span></td>
                                 <?php endif;
                                 ?>
