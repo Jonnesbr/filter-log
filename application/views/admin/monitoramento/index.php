@@ -6,7 +6,7 @@ endif;
 ?>
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<h3 class="panel-title">Atualizar Eventos Manualmente</h3>
+		<h3 class="panel-title">Atualizar Eventos</h3>
 	</div>
 	<div class="panel-body">
 		<?php
@@ -71,7 +71,7 @@ endif;
 				    		<tr>
 				    			<th><b>Cliente</b></th>
 				    			<th><b>IP</b></th>
-				    			<th><b>Eventos</b></th>
+				    			<th class="text-center"><b>Eventos</b></th>
 				    			<th></th>
 				    		</tr>
 				    	</thead>
@@ -80,7 +80,17 @@ endif;
 				    		<tr>
 				    			<td><?php echo $dado['nome'] ?></td>
 				    			<td><?php echo $dado['cliente_ip'] ?></td>
-				    			<td><?php echo $dado['qtde'] ?></td>
+                                <?php
+                                if (intval($dado['qtde']) <= 4) : ?>
+                                    <td class="text-center" ><span class="label label-success"><?php echo $dado['qtde']; ?></span></td>
+                                <?php
+                                elseif (intval($dado['qtde']) >= 5 && intval($dado['qtde']) <= 9) : ?>
+                                    <td class="text-center"><span class="label label-warning"><?php echo $dado['qtde']; ?></span></td>
+                                <?php
+                                elseif (intval($dado['qtde']) >= 10) : ?>
+                                    <td class="text-center"><span class="label label-danger"><?php echo $dado['qtde']; ?></span></td>
+                                <?php endif;
+                                ?>
 				    			<td class="text-center">
 				    				<a href="<?php echo base_url().'Admin/Monitoramento/resolucao/'.$dado['cliente_ip'];?>" title=""><i class="glyphicon glyphicon-ok"></i> Resolução</a>
 				    			</td>

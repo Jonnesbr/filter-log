@@ -16,7 +16,8 @@ class Monitoramento extends InterfaceControllerAdmin
     {
         $this->carregarEventos();
         $this->carregarClientesSemEventos();
-        
+
+        //Capturar eventos no banco da Life
         $this->carregarSelectCliente();
 
         if ($this->input->post())

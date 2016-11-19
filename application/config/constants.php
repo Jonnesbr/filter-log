@@ -50,7 +50,6 @@ define('PERFIL_ADMINISTRADOR', '1');
 define('INTERVALO_MINIMO', 5.40);
 define('INTERVALO_MAXIMO', 6.10);
 
-
 //Extensões de arquivos permitidos para upload
 define('FILES_EXTENSION', 'doc|jpeg|jpg|pdf|bitmap|png|xls|docx|xlsx|ppt|pptx');
 
