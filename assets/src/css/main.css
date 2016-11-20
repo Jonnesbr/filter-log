@@ -30,6 +30,15 @@ body {
   background-color: transparent;
 }
 
+.center-vertical {
+  text-align: center;
+  vertical-align: middle !important;
+}
+
+.td-vertical {
+  vertical-align: middle !important;
+}
+
 .container-login {
   width: 100%;
   height: 100%;

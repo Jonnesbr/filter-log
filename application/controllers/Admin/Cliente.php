@@ -84,6 +84,57 @@ class Cliente extends InterfaceControllerAdmin
             $this->session->set_flashdata('retorno', array('sucesso'=>true, 'mensagem'=>$this->lang->line('sucesso_alteracao')));
     }
 
+    public function status()
+    {
+        $this->id = $this->input->post('id');
+
+        if ($this->id && !is_numeric($this->id))
+            $this->WriteTemplatesJson(array("success" => false, "message" => 'Dados inválidos.', "title" => 'Desculpe', "type" => 'error'));
+
+        $status = $this->alterarStatus($this->id);
+        $this->WriteTemplatesJson($status);
+    }
+
+    public function alterarStatus($argId)
+    {
+        $this->load->library('AppBase/LibCrud');
+        $this->libcrud->setModel('modelcliente');
+        $this->libcrud->campos = 'id, status';
+        $dados = $this->libcrud->buscarPorId($argId);
+
+        $status = ($dados['status'] == STATUS_ATIVO) ? STATUS_INATIVO : STATUS_ATIVO;
+
+        $this->libcrud->where = array('id' => $argId);
+        return $this->libcrud->alterar(array('status' => $status));
+    }
+
+    public function delete()
+    {
+        $this->id = $this->input->post('id');
+
+        $status = $this->removerCliente($this->id);
+        $this->WriteTemplatesJson($status);
+    }
+
+    public function removerCliente($argId)
+    {
+        $this->load->library('AppBase/LibCrud');
+        $this->libcrud->setModel('modelmonitoramento');
+        $this->libcrud->campos = 'count(cliente_ip) as count';
+        $this->libcrud->where = array('cliente_ip' => $argId);
+        $dados = $this->libcrud->buscar();
+
+        if (!$dados[0]['count']) {
+
+            $this->libcrud->setModel('modelcliente');
+            $this->libcrud->where = array('ip' => $argId);
+            if ($this->libcrud->deletar())
+                return array("success" => true, "message" => 'O registro foi excluído com sucesso.', "title" => 'Excluído', "type" => 'success');
+        }
+
+        return array("success" => false, "message" => 'O registro esta em uso e não pode ser excluído, utilize a opção "Inativar" se desejar.', "title" => 'Atenção', "type" => 'warning');
+    }
+
     private function getCadastroPost()
     {
         $dadosPost = array();
@@ -110,7 +161,7 @@ class Cliente extends InterfaceControllerAdmin
     {
         $arrBusca = array(
             'order'  => 'cliente.nome ASC',
-            'fields' => 'cliente.id, cliente.nome, cliente.ip',
+            'fields' => 'cliente.id, cliente.nome, cliente.ip, cliente.status',
             'limit'  => 10
         );
 

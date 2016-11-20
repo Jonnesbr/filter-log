@@ -89,6 +89,7 @@ class Monitoramento extends InterfaceControllerAdmin
         $this->load->library('AppBase/LibCrud');
         $this->libcrud->setModel('modelcliente');
         $this->libcrud->campos = 'id, ip, nome';
+        $this->libcrud->where = array('status' => STATUS_ATIVO);
         $this->libcrud->order = 'nome ASC';
         $rs = $this->libcrud->buscar();
 
@@ -105,7 +106,7 @@ class Monitoramento extends InterfaceControllerAdmin
         $this->load->library('LibMonitoramento');
         $this->libmonitoramento->setModel('modelmonitoramento');
         $this->libmonitoramento->campos = 'cliente.nome, monitoramento.cliente_ip, COUNT(monitoramento.cliente_ip) as qtde, cliente.id as cliente_id';
-        $this->libmonitoramento->where = array('monitoramento.resolucao' => STATUS_INATIVO);
+        $this->libmonitoramento->where = array('monitoramento.resolucao' => STATUS_INATIVO, 'cliente.status' => STATUS_ATIVO);
         $this->libmonitoramento->groupBy = 'cliente_ip';
         $this->libmonitoramento->order = 'cliente_ip ASC';
         $rs = $this->libmonitoramento->buscarEvento();
@@ -118,7 +119,7 @@ class Monitoramento extends InterfaceControllerAdmin
         $this->load->library('LibMonitoramento');
         $this->libmonitoramento->setModel('modelmonitoramento');
         $this->libmonitoramento->campos = 'cliente.nome, monitoramento.cliente_ip, monitoramento.resolucao';
-        $this->libmonitoramento->where = array('monitoramento.resolucao' => STATUS_ATIVO);
+        $this->libmonitoramento->where = array('monitoramento.resolucao' => STATUS_ATIVO, 'cliente.status' => STATUS_ATIVO);
         $this->libmonitoramento->order = 'cliente_ip ASC';
         $rs = $this->libmonitoramento->buscarEvento();
 
