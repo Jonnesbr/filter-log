@@ -29,14 +29,6 @@ class Monitoramento extends InterfaceControllerAdmin
         $this->WriteTemplates('index');
     }
 
-    public function tempoReal(){
-        $this->WriteTemplates('tempoReal');
-    }
-
-    public function filtro(){
-        $this->WriteTemplates('filtro');
-    }
-
     /**
      * Inicio do processo de captura de eventos no banco Life
      */

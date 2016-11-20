@@ -105,6 +105,31 @@ endif;
 		</div>
 		<!--Fim-->
 
+		<!--Tabela que listará todos os evendos daquela localização-->
+		<div class="row">
+			<div class="collapse col-xs-12 col-sm-12 col-md-6" id="eventos">
+				<div class="well">
+					<table class="table table-bordered table-stripped">
+						<thead>
+							<tr>
+								<th><b>Início</b></th>
+								<th><b>Fim</b></th>
+								<th><b>Valor do Intervalo</b></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<!--Fim-->
+
 		</div>
 	<br>
 			
