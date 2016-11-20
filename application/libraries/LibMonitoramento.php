@@ -8,12 +8,12 @@ class LibMonitoramento extends LibCrud
 
     public function verificarSyslog($argData)
     {
-        $data = '2016-11-16 00:00:00';
+        $data = '2016-11-17 00:00:00';
         $querySQL = "
                      select * 
                      from systemevents 
                      where message like '%Updating bind%@{$argData['ip']}:5060' and devicereportedtime >= '{$data}'
-                     limit 30
+                     limit 100
                     ";
 
         $this->setModel('modelpgmonitoramento');

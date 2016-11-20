@@ -6,7 +6,7 @@ endif;
 ?>
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<h3 class="panel-title">Atualizar Eventos Manualmente</h3>
+		<h3 class="panel-title">Atualizar Eventos</h3>
 	</div>
 	<div class="panel-body">
 		<?php
@@ -26,7 +26,6 @@ endif;
 		<div class="row">
 			<div class="col-md-7">
 				<input name="submitCadastro" class="btn btn-primary" id="submitCadastro" type="submit" value="Atualizar"/>
-				<input name="btnVoltar" class="btn-redirect btn btn-default" type="button" data-url="<?php echo base_url(); ?>Admin/Monitoramento" value="<?php echo $this->lang->line('voltar'); ?>"/>
 			</div>
 		</div>
 		<div id="carregando"></div>
@@ -71,7 +70,7 @@ endif;
 				    		<tr>
 				    			<th><b>Cliente</b></th>
 				    			<th><b>IP</b></th>
-				    			<th><b>Eventos</b></th>
+				    			<th class="text-center"><b>Eventos</b></th>
 				    			<th></th>
 				    		</tr>
 				    	</thead>
@@ -80,11 +79,25 @@ endif;
 				    		<tr>
 				    			<td><?php echo $dado['nome'] ?></td>
 				    			<td><?php echo $dado['cliente_ip'] ?></td>
+<<<<<<< HEAD
 				    			<td>
 				    			<a role="button" data-toggle="collapse" href="#eventos" aria-expanded="false" aria-controls="eventos">
 				    				<?php echo $dado['qtde'] ?>
 				    			</a>
 				    			</td>
+=======
+                                <?php
+                                if (intval($dado['qtde']) <= SINAL_VERDE) : ?>
+                                    <td class="text-center" ><span class="label label-success"><?php echo $dado['qtde']; ?></span></td>
+                                <?php
+                                elseif (intval($dado['qtde']) >= SINAL_AMARELO_MIN && intval($dado['qtde']) <= SINAL_AMARELO_MAX) : ?>
+                                    <td class="text-center"><span class="label label-warning"><?php echo $dado['qtde']; ?></span></td>
+                                <?php
+                                elseif (intval($dado['qtde']) >= SINAL_VERMELHO) : ?>
+                                    <td class="text-center"><span class="label label-danger"><?php echo $dado['qtde']; ?></span></td>
+                                <?php endif;
+                                ?>
+>>>>>>> d1e4efc667fadb9ad1c968db34486fe32a3413db
 				    			<td class="text-center">
 				    				<a href="<?php echo base_url().'Admin/Monitoramento/resolucao/'.$dado['cliente_ip'];?>" title=""><i class="glyphicon glyphicon-ok"></i> Resolução</a>
 				    			</td>

@@ -16,7 +16,8 @@ class Monitoramento extends InterfaceControllerAdmin
     {
         $this->carregarEventos();
         $this->carregarClientesSemEventos();
-        
+
+        //Capturar eventos no banco da Life
         $this->carregarSelectCliente();
 
         if ($this->input->post())
@@ -38,7 +39,6 @@ class Monitoramento extends InterfaceControllerAdmin
         if ($this->input->post())
             $this->processarMonitoramentoPost();
 
-        $this->WriteTemplates('monitorar');
     }
 
     private function processarMonitoramentoPost()
@@ -81,6 +81,7 @@ class Monitoramento extends InterfaceControllerAdmin
         $this->load->library('AppBase/LibCrud');
         $this->libcrud->setModel('modelcliente');
         $this->libcrud->campos = 'id, ip, nome';
+        $this->libcrud->where = array('status' => STATUS_ATIVO);
         $this->libcrud->order = 'nome ASC';
         $rs = $this->libcrud->buscar();
 
@@ -97,6 +98,7 @@ class Monitoramento extends InterfaceControllerAdmin
         $this->load->library('LibMonitoramento');
         $this->libmonitoramento->setModel('modelmonitoramento');
         $this->libmonitoramento->campos = 'cliente.nome, monitoramento.cliente_ip, COUNT(monitoramento.cliente_ip) as qtde, cliente.id as cliente_id';
+        $this->libmonitoramento->where = array('monitoramento.resolucao' => STATUS_INATIVO, 'cliente.status' => STATUS_ATIVO);
         $this->libmonitoramento->groupBy = 'cliente_ip';
         $this->libmonitoramento->order = 'cliente_ip ASC';
         $rs = $this->libmonitoramento->buscarEvento();
@@ -109,7 +111,7 @@ class Monitoramento extends InterfaceControllerAdmin
         $this->load->library('LibMonitoramento');
         $this->libmonitoramento->setModel('modelmonitoramento');
         $this->libmonitoramento->campos = 'cliente.nome, monitoramento.cliente_ip, monitoramento.resolucao';
-        $this->libmonitoramento->where = array('monitoramento.resolucao' => STATUS_ATIVO);
+        $this->libmonitoramento->where = array('monitoramento.resolucao' => STATUS_ATIVO, 'cliente.status' => STATUS_ATIVO);
         $this->libmonitoramento->order = 'cliente_ip ASC';
         $rs = $this->libmonitoramento->buscarEvento();
 
@@ -150,10 +152,6 @@ class Monitoramento extends InterfaceControllerAdmin
 
     private function processarResolucao()
     {
-
-
-//        var_dump($this->input->post());exit;
-
         $dadosPost = array();
         $dadosPost['cliente_ip'] = $this->input->post('cliente_ip');
         $dadosPost['causa_id'] = $this->input->post('causa');
@@ -162,8 +160,12 @@ class Monitoramento extends InterfaceControllerAdmin
         $this->libcrud->setModel('modelresolucaocliente');
 
         if ($this->libcrud->inserir($dadosPost)) {
-            $this->session->set_flashdata('retorno', array('sucesso' => true, 'mensagem' => 'Resolução Informada com Sucesso'));
-            redirect(base_url().'Admin/Monitoramento/index', 'refresh');
+            $this->libcrud->setModel('modelmonitoramento');
+            $this->libcrud->where = array('cliente_ip' => $dadosPost['cliente_ip'], 'resolucao' => STATUS_INATIVO);
+            if ($this->libcrud->alterar(array('resolucao' => STATUS_ATIVO))) {
+                $this->session->set_flashdata('retorno', array('sucesso' => true, 'mensagem' => 'Resolução Informada com Sucesso'));
+                redirect(base_url() . 'Admin/Monitoramento/index', 'refresh');
+            }
         }
     }
 
