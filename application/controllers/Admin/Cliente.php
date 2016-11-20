@@ -14,7 +14,7 @@ class Cliente extends InterfaceControllerAdmin
         $this->setPaginacaoMetodoAjax('Admin/Cliente/AjaxPage/');
         $this->setPaginacaoView($this->viewsDirectory . '/lista');
         $this->ativaPaginacaoSemWhere();
-        $this->addBreadCrumbs($this->lang->line('cliente'), true);
+        $this->addBreadCrumbs('Cliente', true);
     }
 
     public function index()

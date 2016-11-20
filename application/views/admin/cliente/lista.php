@@ -25,16 +25,6 @@
                     <a type="button" class="btn btn-danger btn-sm btn-delete" href="#" data-index="Admin/Cliente/index/" data-url="Admin/Cliente/delete/" data-id="<?php echo $row['ip']?>" title="Excluir Cliente"><i class="fa fa-trash" aria-hidden="true"></i></a>
                 </div>
             </td>
-<!--            <td class="pull-right">-->
-<!--                <div class="btn-group">-->
-<!--                    <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">-->
-<!--                        <span class="glyphicon glyphicon-wrench"></span>-->
-<!--                    </a>-->
-<!--                    <ul class="dropdown-menu">-->
-<!--                        <li><a href="--><?php //echo base_url().'Admin/Cliente/cadastro/'.$row['id'];?><!--" title="--><?php //echo $this->lang->line('editar');?><!--"><i class="fa fa-pencil fa-fw"></i>--><?php //echo $this->lang->line('editar');?><!--</a></li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-<!--            </td>-->
         </tr>
     <?php endforeach;?>
     </tbody>

@@ -177,4 +177,34 @@ class Monitoramento extends InterfaceControllerAdmin
         }
     }
 
+    /**
+     * Listagem de eventos não resolvidos por cliente
+     * @param null $argId
+     */
+    public function eventos($argId = null)
+    {
+        if ($argId == null)
+            redirect(base_url().'Admin/Monitoramento/index', 'refresh');
+        $this->carregarEventosCliente($argId);
+        $this->WriteTemplates('eventos');
+    }
+
+    public function carregarEventosCliente($argId)
+    {
+        $this->load->library('LibMonitoramento');
+        $this->libmonitoramento->setModel('modelmonitoramento');
+        $this->libmonitoramento->campos = 'cliente.nome, monitoramento.cliente_ip, monitoramento.syslog_id, monitoramento.data_inicio, monitoramento.data_fim, monitoramento.duracao, monitoramento.resolucao';
+        $this->libmonitoramento->where = array('monitoramento.cliente_ip' => $argId, 'cliente.status' => STATUS_ATIVO, 'monitoramento.resolucao' => STATUS_INATIVO);
+        $this->libmonitoramento->order = 'cliente_ip ASC';
+        $data = $this->libmonitoramento->buscarEvento();
+
+        if (isset($data[0]['cliente_ip'])) {
+            $this->load->library('AppBase/LibInfraFormatador');
+            $this->libinfraformatador->campos_data = array('data_inicio', 'data_fim');
+            $this->libinfraformatador->formatarPadraoInterface($data, 'd/m/Y', 'H:i:s');
+        }
+
+        $this->templateAddItem('principal', 'dadosEventosCliente', $data);
+    }
+
 }

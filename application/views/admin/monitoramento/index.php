@@ -71,7 +71,7 @@ endif;
 				    			<th><b>Cliente</b></th>
 				    			<th><b>IP</b></th>
 				    			<th class="text-center"><b>Eventos</b></th>
-				    			<th></th>
+				    			<th class="text-center"><b>Ações</b></th>
 				    		</tr>
 				    	</thead>
 				    	<tbody>
@@ -90,9 +90,12 @@ endif;
                                     <td class="text-center"><span class="label label-danger"><?php echo $dado['qtde']; ?></span></td>
                                 <?php endif;
                                 ?>
-				    			<td class="text-center">
-				    				<a href="<?php echo base_url().'Admin/Monitoramento/resolucao/'.$dado['cliente_ip'];?>" title=""><i class="glyphicon glyphicon-ok"></i> Resolução</a>
-				    			</td>
+                                <td class="center-vertical">
+                                    <div class="btn-group" role="group" aria-label="...">
+                                        <a type="button" class="btn btn-primary btn-sm" href="<?php echo base_url().'Admin/Monitoramento/eventos/' . $dado['cliente_ip'];?>" title="Visualizar Eventos"><i class="fa fa-search" aria-hidden="true"></i></a>
+                                        <a type="button" class="btn btn-success btn-sm" href="<?php echo base_url().'Admin/Monitoramento/resolucao/' . $dado['cliente_ip'];?>" title="Informar Resolução"><i class="fa fa-check" aria-hidden="true"></i></a>
+                                    </div>
+                                </td>
 				    		</tr>
 				    		<?php } ?>
 				    	</tbody>
