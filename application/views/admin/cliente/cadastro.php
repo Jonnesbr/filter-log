@@ -23,6 +23,16 @@
                 <label for="ip">Endereço IP*:</label>
                 <input type="text" name="ip" class="form-control ip_address" id="ip" value="<?php echo $ip; ?>" maxlength="20" />
             </div>
+            <div class="col-md-2 form-group">
+                <?php $latitude = set_value('latitude', (isset($dadosCliente['latitude']) ? $dadosCliente['latitude'] : '')); ?>
+                <label for="latitude">Latitude*:</label>
+                <input type="text" name="latitude" class="form-control" id="latitude" value="<?php echo $latitude; ?>" maxlength="100" />
+            </div>
+            <div class="col-md-2 form-group">
+                <?php $longitude = set_value('longitude', (isset($dadosCliente['longitude']) ? $dadosCliente['longitude'] : '')); ?>
+                <label for="longitude">Longitude*:</label>
+                <input type="text" name="longitude" class="form-control" id="longitude" value="<?php echo $longitude; ?>" maxlength="100" />
+            </div>
         </div>
         <div class="row">
             <div class="col-md-7 text-left">

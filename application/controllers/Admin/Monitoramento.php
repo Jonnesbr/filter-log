@@ -178,6 +178,7 @@ class Monitoramento extends InterfaceControllerAdmin
         if ($argId == null)
             redirect(base_url().'Admin/Monitoramento/index', 'refresh');
         $this->carregarEventosCliente($argId);
+        $this->addBreadCrumbs('Eventos');
         $this->WriteTemplates('eventos');
     }
 
@@ -190,13 +191,39 @@ class Monitoramento extends InterfaceControllerAdmin
         $this->libmonitoramento->order = 'cliente_ip ASC';
         $data = $this->libmonitoramento->buscarEvento();
 
+        if(!$data)
+            redirect(base_url().'Admin/Monitoramento');
+
         if (isset($data[0]['cliente_ip'])) {
             $this->load->library('AppBase/LibInfraFormatador');
             $this->libinfraformatador->campos_data = array('data_inicio', 'data_fim');
             $this->libinfraformatador->formatarPadraoInterface($data, 'd/m/Y', 'H:i:s');
         }
 
+        $this->templateAddItem('principal', 'dadosCliente', $this->carregarDadosCliente($argId));
         $this->templateAddItem('principal', 'dadosEventosCliente', $data);
+    }
+
+    private function carregarDadosCliente($argIp)
+    {
+        $this->load->library('AppBase/LibCrud');
+        $this->libcrud->setModel('modelcliente');
+        $this->libcrud->campos = 'id, nome, ip, latitude, longitude';
+        $this->libcrud->where = array('ip' => $argIp);
+        $dados = $this->libcrud->buscar();
+
+        if (!$dados[0])
+            redirect(base_url().'Admin/Cliente');
+
+        $dados[0]['zoom'] = '17';
+        $dados[0]['cidade'] = 'Pompéia - SP';
+        if (!$dados[0]['latitude']) {
+            $dados[0]['latitude'] = '-22.103277';
+            $dados[0]['longitude'] = '-50.181467';
+            $dados[0]['zoom'] = '13';
+        }
+
+        return $dados[0];
     }
 
 }

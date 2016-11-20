@@ -61,6 +61,8 @@ class Cliente extends InterfaceControllerAdmin
         $this->load->library('form_validation');
         $this->form_validation->set_rules('nome', 'Nome', "trim|required|valid_text");
         $this->form_validation->set_rules('ip', 'Endereço IP', "trim|required|valid_ip");
+        $this->form_validation->set_rules('latitude', 'Latitude', "trim");
+        $this->form_validation->set_rules('longitude', 'Longitude', "trim");
 
         return $this->form_validation->run();
     }
@@ -140,6 +142,8 @@ class Cliente extends InterfaceControllerAdmin
         $dadosPost = array();
         $dadosPost['nome'] = $this->input->post('nome');
         $dadosPost['ip'] = $this->input->post('ip');
+        $dadosPost['latitude'] = $this->input->post('latitude');
+        $dadosPost['longitude'] = $this->input->post('longitude');
 
         return $dadosPost;
     }
@@ -148,7 +152,7 @@ class Cliente extends InterfaceControllerAdmin
     {
         $this->load->library('AppBase/LibCrud');
         $this->libcrud->setModel('modelcliente');
-        $this->libcrud->campos = 'id, nome, ip';
+        $this->libcrud->campos = 'id, nome, ip, latitude, longitude';
         $dados = $this->libcrud->buscarPorId($this->id);
 
         if(!$dados)
