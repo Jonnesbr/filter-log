@@ -8,7 +8,7 @@ class LibMonitoramento extends LibCrud
 
     public function verificarSyslog($argData)
     {
-        $data = '2016-11-17 00:00:00';
+        $data = '2016-11-21 00:00:00';
         $querySQL = "
                      select * 
                      from systemevents 
