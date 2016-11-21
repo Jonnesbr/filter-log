@@ -11,3 +11,9 @@ ALTER TABLE cliente ADD COLUMN data_cadastro TIMESTAMP NOT NULL DEFAULT CURRENT_
 # Alterações de Cadastro de Cliente - Longitude e Latitude
 ALTER TABLE cliente ADD COLUMN latitude VARCHAR(20) DEFAULT NULL AFTER ip;
 ALTER TABLE cliente ADD COLUMN longitude VARCHAR(20) DEFAULT NULL AFTER latitude;
+
+# Novas regras de ACL Monitoramento
+INSERT INTO `perfil_regra` (`regra`,`contexto`,`descricao`) VALUES
+  ('admin_monitoramento_index','Monitoramento','Listar clientes em monitoramento'),
+  ('admin_monitoramento_eventos','Monitoramento','Listagem de eventos por cliente'),
+  ('admin_monitoramento_resolucao','Monitoramento','Definir uma resolucao para para os eventos');
