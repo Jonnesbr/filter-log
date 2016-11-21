@@ -10,13 +10,10 @@ endif;
 		    google.charts.setOnLoadCallback(drawChart);
 		    function drawChart() {
 		      var data = google.visualization.arrayToDataTable([
-		        ["Element", "Density", { role: "style" } ],
-		        ["Cabo Rompido", 8.94, "#b87333"],
-		        ["Switch Queimado", 10.49, "silver"],
-		        ["Problemas com o switch principal", 19.30, "gold"],
-		        ["Cascateamento", 21.45, "color: #e5e4e2"],
-		        ["Defeito no cliente", 21.45, "color: #e5e4e2"],
-		        ["Problema de energia", 21.45, "color: #e5e4e2"]
+		        ["", "", { role: "style" } ],
+		        <?php foreach ($dadosQtdeCausa as $dado){ ?>
+		        	['<?php echo $dado["descricao"]?>', <?php echo $dado["qtde"]?>, 'blue'],
+		        <?php }?>
 		      ]);
 
 		      var view = new google.visualization.DataView(data);

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <?php echo $titulo; ?>
-    <body>
+    <body background="<?php echo base_url(); ?>assets/dist/img/background.jpg">
         <?php echo $cabecalho;?>
         <div class="container-fluid">
             <?php
