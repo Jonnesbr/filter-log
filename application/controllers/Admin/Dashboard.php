@@ -68,6 +68,9 @@ class Dashboard extends InterfaceControllerAdmin
         if (!$dados)
             return false;
 
+        foreach ($dados as $chave => $valor)
+            $dados[$chave]['qtde'] = intval($valor['qtde']);
+
         return $dados;
     }
 
