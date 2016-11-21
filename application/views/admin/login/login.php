@@ -20,9 +20,9 @@
         </div>
         <div class="form-group actions">
             <button type="submit" class="btn btn-primary btn-lg btn-block"><?php echo $this->lang->line('entrar')?></button>
-<!--            <div class="text-right">-->
-<!--            <a class="link-block link-esqueci-senha" href="--><?php //echo base_url();?><!--Admin/Login/solicitarRecuperacaoSenhaRest">--><?php //echo $this->lang->line('esqueci_minha_senha')?><!--</a>-->
-<!--            </div>-->
+            <div class="text-right">
+            <a class="link-block link-esqueci-senha" href="<?php echo base_url();?>Admin/Login/solicitarRecuperacaoSenhaRest"><?php echo $this->lang->line('esqueci_minha_senha')?></a>
+            </div>
         </div>
     </form>
 </div>
