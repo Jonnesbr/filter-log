@@ -39,6 +39,11 @@ class Dashboard extends InterfaceControllerAdmin
          * Carrega CAUSAS x QUANTIDADE
          */
         $this->templateAddItem('principal', 'dadosQtdeCausa', $this->carregarQtdeCausa());
+
+        /**
+         * Carrega TOTAL CAUSAS x CAUSA x CLIENTE
+         */
+        $this->templateAddItem('principal', 'dadosTotalCliente', $this->carregarTotalCliente());
     }
 
     private function carregarCausaCliente()
@@ -70,6 +75,21 @@ class Dashboard extends InterfaceControllerAdmin
 
         foreach ($dados as $chave => $valor)
             $dados[$chave]['qtde'] = intval($valor['qtde']);
+
+        return $dados;
+    }
+
+    private function carregarTotalCliente()
+    {
+        $this->load->library('LibMonitoramento');
+        $this->libmonitoramento->setModel('modelmonitoramento');
+        $this->libmonitoramento->campos = 'cliente.nome, cliente.ip, causa.descricao, count(monitoramento.cliente_ip) as qtde';
+        $this->libmonitoramento->groupBy = 'cliente.ip, causa.descricao';
+        $this->libmonitoramento->where = array('cliente.status' => STATUS_ATIVO);
+        $dados = $this->libmonitoramento->buscarTotalCliente();
+
+        if (!$dados)
+            return false;
 
         return $dados;
     }
